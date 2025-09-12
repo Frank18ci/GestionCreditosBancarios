@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ServicioClientes
+  datasource:
+    url: jdbc:postgresql://localhost:5440/db_clientes
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+
+server:
+  port: 8085
+

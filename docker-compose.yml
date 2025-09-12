@@ -1,0 +1,49 @@
+# docker-compose.yml (opcional)
+
+version: '3.8'
+
+services:
+
+  db-clientes:
+
+    image: postgres:15
+
+    environment:
+
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: postgres
+
+      POSTGRES_DB: db_clientes
+
+    ports:
+
+      - "5440:5432"
+
+    volumes:
+
+      - pgdata:/var/lib/postgresql/data
+
+  db-prestamos:
+
+      image: postgres:15
+
+      environment:
+
+        POSTGRES_USER: postgres
+
+        POSTGRES_PASSWORD: postgres
+
+        POSTGRES_DB: db_prestamos
+
+      ports:
+
+        - "5441:5432"
+
+      volumes:
+
+        - pgdata:/var/lib/postgresql/data2
+
+volumes:
+
+  pgdata:
