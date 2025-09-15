@@ -68,6 +68,7 @@ public class PrestamoServiceImpl implements PrestamoService {
         }
 
         //Verificacion existencia de cuenta
+        verificarExistenciaCuenta(prestamoDto.getCuentaId());
 
 
 
@@ -209,5 +210,24 @@ public class PrestamoServiceImpl implements PrestamoService {
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
         );
         prestamoRepository.delete(prestamoFound);
+    }
+
+    private void verificarExistenciaCuenta(Long cuentaId) {
+        if (cuentaId == null) {
+            throw new BadRequest("El id de la cuenta no puede ser nulo");
+        }
+        try {
+            List<TransaccionResponse> transacciones = transaccionClient.obteTransacciones(cuentaId);
+            // Si el cliente de transacciones devuelve null o lanza NotFound, lo tratamos como inexistente
+            if (transacciones == null) {
+                throw new ResourceNotFound("La cuenta con id: " + cuentaId + " no existe");
+            }
+        } catch (FeignException.NotFound nf) {
+            throw new ResourceNotFound("La cuenta con id: " + cuentaId + " no existe");
+        } catch (FeignException fe) {
+            throw new RuntimeException("No se pudo verificar la cuenta: " + fe.getMessage(), fe);
+        } catch (Exception ex) {
+            throw new RuntimeException("Error al verificar existencia de la cuenta: " + ex.getMessage(), ex);
+        }
     }
 }
