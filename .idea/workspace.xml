@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/CuentaClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TransaccionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +63,7 @@
     "Spring Boot.ServicioEurekaApplication.executor": "Run",
     "Spring Boot.ServicioPrestamosApplication.executor": "Run",
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "metodopagarbuscarcuentas",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -204,7 +196,7 @@
       <updated>1757877345155</updated>
       <workItem from="1757877346021" duration="9120000" />
       <workItem from="1757953088877" duration="4897000" />
-      <workItem from="1757963907419" duration="9397000" />
+      <workItem from="1757963907419" duration="9819000" />
     </task>
     <servers />
   </component>
