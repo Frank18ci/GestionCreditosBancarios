@@ -4,9 +4,10 @@ import feign.FeignException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.client.ClienteClient;
+import org.nttdata.com.servicioprestamos.client.CuentaClient;
 import org.nttdata.com.servicioprestamos.client.TransaccionClient;
-import org.nttdata.com.servicioprestamos.client.dto.ClienteResponse;
-import org.nttdata.com.servicioprestamos.client.dto.TransaccionResponse;
+import org.nttdata.com.servicioprestamos.client.dto.*;
+import org.nttdata.com.servicioprestamos.dto.CuotaRequest;
 import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
 import org.nttdata.com.servicioprestamos.dto.PrestamoResponse;
 import org.nttdata.com.servicioprestamos.exception.BadRequest;
@@ -14,12 +15,17 @@ import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.EstadoPrestamo;
 import org.nttdata.com.servicioprestamos.models.Prestamo;
 import org.nttdata.com.servicioprestamos.repository.PrestamoRepository;
+import org.nttdata.com.servicioprestamos.service.CuotaService;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
 import org.nttdata.com.servicioprestamos.util.PrestamoMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,8 +35,8 @@ public class PrestamoServiceImpl implements PrestamoService {
     private final PrestamoMapper prestamoMapper;
     private final ClienteClient clienteClient;
     private final TransaccionClient transaccionClient;
-
-    private static final String CLIENTE_SERVICE_CB = "clienteService";
+    private final CuentaClient cuentaClient;
+    private final CuotaService cuotaService;
 
 
     @Override
@@ -51,26 +57,37 @@ public class PrestamoServiceImpl implements PrestamoService {
         );
     }
 
+    @CircuitBreaker(name = "clienteService", fallbackMethod = "clienteFallback")
+    public ClienteResponse getClienteById(Long clienteId) {
+        try{
+            return clienteClient.getClienteById(clienteId);
+        } catch (FeignException.NotFound ex){
+            throw new ResourceNotFound("Cliente no encontrado con id: " + clienteId);
+        }
+    }
+    public ClienteResponse clienteFallback(Long clienteId, Throwable ex) {
+        throw new RuntimeException("FALLBACK: Servicio de clientes no disponible para clienteId=" + clienteId, ex);
+    }
+    @CircuitBreaker(name = "cuentaService", fallbackMethod = "cuentaFallback")
+    public CuentaResponse getCuentaById(Long cuentaId) {
+        try{
+            return cuentaClient.getCuentaById(cuentaId);
+        } catch (FeignException.NotFound ex){
+            throw new ResourceNotFound("Cuenta no encontrado con id: " + cuentaId);
+        }
+    }
+    public CuentaResponse cuentaFallback(Long cuentaId, Throwable ex) {
+        throw new RuntimeException("FALLBACK: Servicio de cuentas no disponible para cuentaId=" + cuentaId, ex);
+    }
+
     @Override
     @Transactional
-    @CircuitBreaker(name = CLIENTE_SERVICE_CB, fallbackMethod = "createPrestamoFallback")
     public PrestamoResponse createPrestamo(PrestamoRequest prestamoDto) {
 
         //Verificar existencia del cliente
-        ClienteResponse clienteResponse;
-        try{
-            clienteResponse = clienteClient.getClienteById(prestamoDto.getClienteId());
-            if(clienteResponse == null || clienteResponse.getId() == null){
-                throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-            }
-        } catch (FeignException.NotFound ex){
-            throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-        }
-
+        ClienteResponse clienteResponse = getClienteById(prestamoDto.getClienteId());
         //Verificacion existencia de cuenta
-        verificarExistenciaCuenta(prestamoDto.getCuentaId());
-
-
+        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.getCuentaId());
 
 
         //Evaluar credito
@@ -172,27 +189,25 @@ public class PrestamoServiceImpl implements PrestamoService {
         System.out.println("Tasa de interés válida.");
     }
 
-    public PrestamoResponse createPrestamoFallback(PrestamoRequest prestamoDto, Throwable ex) {
-        throw new RuntimeException("El servicio de clientes no está disponible. Intente más tarde" + ex);
-    }
+
 
     @Override
-    @CircuitBreaker(name = CLIENTE_SERVICE_CB, fallbackMethod = "createPrestamoFallback")
+    @Transactional
     public PrestamoResponse updatePrestamo(Long id, PrestamoRequest prestamoDto) {
         Prestamo prestamoFound = prestamoRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
         );
 
         //Verificar existencia del cliente
-        ClienteResponse clienteResponse;
-        try{
-            clienteResponse = clienteClient.getClienteById(prestamoDto.getClienteId());
-            if(clienteResponse == null || clienteResponse.getId() == null){
-                throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-            }
-        } catch (FeignException.NotFound ex){
-            throw new ResourceNotFound("El cliente con id: " + prestamoDto.getClienteId() + " no existe");
-        }
+        ClienteResponse clienteResponse = getClienteById(prestamoDto.getClienteId());
+        //Verificacion existencia de cuenta
+        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.getCuentaId());
+
+        //Evaluar credito
+        evalularCredito(prestamoDto.getCuentaId(), prestamoDto.getMonto());
+        evaluarMonto(prestamoDto.getPlazoMeses(), prestamoDto.getMonto(), prestamoDto.getTasaInteres());
+        evaluarPlazo(prestamoDto.getPlazoMeses(), prestamoDto.getMonto(), prestamoDto.getTasaInteres());
+        evaluarTasaInteres(prestamoDto.getTasaInteres(), prestamoDto.getMonto(), prestamoDto.getPlazoMeses());
 
         prestamoFound.setClienteId(prestamoDto.getClienteId());
         prestamoFound.setCuentaId(prestamoDto.getCuentaId());
@@ -229,5 +244,82 @@ public class PrestamoServiceImpl implements PrestamoService {
         } catch (Exception ex) {
             throw new RuntimeException("Error al verificar existencia de la cuenta: " + ex.getMessage(), ex);
         }
+    @Override
+    public List<PrestamoResponse> getPrestamosByClienteId(Long clienteId) {
+        //Verificar existencia del cliente
+        ClienteResponse clienteResponse = getClienteById(clienteId);
+
+        return prestamoMapper.toDtoList(prestamoRepository.findByClienteId(clienteId));
+    }
+
+    @Override
+    @Transactional
+    public PrestamoResponse aceptarPrestamo(Long id) {
+        Prestamo prestamoFound = prestamoRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFound("Préstamo no encontrado con id: " + id)
+        );
+
+
+        //Verificar existencia del cliente
+        ClienteResponse clienteResponse = getClienteById(prestamoFound.getClienteId());
+        //Verificacion existencia de cuenta
+        CuentaResponse cuentaResponse = getCuentaById(prestamoFound.getCuentaId());
+
+        //Verificar cantidad de prestamosActivos del cliente
+        List<Prestamo> prestamosActivos = prestamoRepository.findByClienteIdAndEstadoPrestamoId(prestamoFound.getClienteId(), 2L);
+        if(prestamosActivos.size() >= 3){
+            throw new BadRequest("El cliente no puede tener más de 3 préstamos activos.");
+        }
+
+        if(prestamoFound.getEstadoPrestamo().getId() != 1L){
+            throw new BadRequest("Solo se pueden aceptar préstamos en estado PENDIENTE");
+        }
+        //Cambiar estado a ACEPTADO (2)
+        prestamoFound.setEstadoPrestamo(EstadoPrestamo.builder().id(2L).build());
+
+        //Fecha
+        LocalDate hoy = LocalDate.now();
+
+
+        //Asignar fecha de desembolso
+        prestamoFound.setFechaDesembolso(Date.from(hoy.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+
+        //Realizar deposito en la cuenta asociada al prestamo
+        TransaccionRequest transaccionRequest = TransaccionRequest.builder()
+                .cuentaId(cuentaResponse.getId())
+                .tipoTransaccionId(1L)
+                .monto(prestamoFound.getMonto())
+                .fecha(Date.from(hoy.atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .referencia("Desembolso de préstamo")
+                .build();
+
+        transaccionClient.crearTransaccion(transaccionRequest);
+        for (int i = 1; i <= prestamoFound.getPlazoMeses(); i++) {
+            // Calcular la fecha de vencimiento sumando i meses a la fecha actual
+            LocalDate fechaVencimiento = LocalDate.now().plusMonths(i);
+            // Calcular el monto de la cuota
+            BigDecimal monto = prestamoFound.getMonto()
+                    .multiply(prestamoFound.getTasaInteres().add(BigDecimal.ONE))
+                    .divide(BigDecimal.valueOf(prestamoFound.getPlazoMeses()), 2, RoundingMode.HALF_UP);
+            // Crear y guardar la cuota
+            cuotaService.saveCuota(CuotaRequest.builder()
+                            .prestamoId(prestamoFound.getId())
+                            .numero(i)
+                            .fechaVencimiento(Date.from(fechaVencimiento.atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                            // Estado de PENDIENTE
+                            .estadoCuotaId(1L)
+                            .monto(monto)
+                            .build());
+        }
+        // Actualizar saldo de la cuenta
+        CuentaRequest cuentaRequest = CuentaRequest.builder()
+                .estadoCuentaId(cuentaResponse.getEstadoCuenta().getId())
+                .tipoCuentaId(cuentaResponse.getTipoCuenta().getId())
+                .clienteId(cuentaResponse.getClienteId())
+                .saldo(cuentaResponse.getSaldo().add(prestamoFound.getMonto()))
+                .build();
+
+        cuentaClient.updateCuenta(cuentaResponse.getId(), cuentaRequest);
+        return prestamoMapper.toDto(prestamoRepository.save(prestamoFound));
     }
 }

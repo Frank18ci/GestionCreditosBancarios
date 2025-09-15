@@ -35,4 +35,10 @@ public class PrestamoController {
         prestamoService.deletePrestamo(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+    @PostMapping("/aprobar/{id}")
+    public ResponseEntity<?> aceptarPrestamo(@PathVariable Long id) {
+
+        return ResponseEntity.ok(prestamoService.aceptarPrestamo(id));
+    }
 }
+

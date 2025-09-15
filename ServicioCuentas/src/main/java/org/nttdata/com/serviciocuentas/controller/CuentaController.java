@@ -60,14 +60,9 @@ public class CuentaController {
         System.out.println("Atendiendo solicitud desde instancia con el puerto: " + port);
         logger.info("GET /cuentas/cliente/{} - Obtener cuentas por cliente", idCliente);
 
-        try {
-            List<CuentaResponse> responses = cuentaService.obtenerCuentasPorCliente(idCliente);
-            return ResponseEntity.ok(responses);
+        List<CuentaResponse> responses = cuentaService.obtenerCuentasPorCliente(idCliente);
+        return ResponseEntity.ok(responses);
 
-        } catch (Exception e) {
-            logger.error("Error en GET /cuentas/cliente/{}: {}", idCliente, e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
     }
 
     @GetMapping

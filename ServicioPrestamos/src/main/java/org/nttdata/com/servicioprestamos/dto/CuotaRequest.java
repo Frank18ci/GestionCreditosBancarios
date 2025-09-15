@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -23,7 +24,7 @@ public class CuotaRequest {
     private Date fechaVencimiento;
     @NotNull(message = "El monto no puede ser nulo")
     @Positive
-    private Double monto;
+    private BigDecimal monto;
     @NotNull(message = "El ID del estado de la cuota no puede ser nulo")
     private Long estadoCuotaId;
 }

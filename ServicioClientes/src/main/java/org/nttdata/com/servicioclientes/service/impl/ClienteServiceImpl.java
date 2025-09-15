@@ -1,6 +1,8 @@
 package org.nttdata.com.servicioclientes.service.impl;
 
 
+import feign.FeignException;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioclientes.client.CuentaClient;
 import org.nttdata.com.servicioclientes.client.dto.CuentaResponse;
@@ -230,14 +232,19 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    @CircuitBreaker(name = "cuentaService", fallbackMethod = "fallbackObtenerClienteConCuentas")
     public List<CuentaResponse> obtenerClienteConCuentas(Long idCliente) {
         if (!clienteRepository.existsById(idCliente)) {
             throw new ResourceNotFound("Cliente no encontrado con ID: " + idCliente);
         }
         try {
             return cuentaClient.getCuentasByClienteId(idCliente);
-        } catch (Exception e) {
-            throw new RuntimeException("Error al obtener cuentas del cliente: " + e.getMessage());
+        } catch (FeignException.NotFound e) {
+            throw new ResourceNotFound("No se encontraron cuentas para el cliente ID: " + idCliente);
         }
+    }
+    public List<CuentaResponse> fallbackObtenerClienteConCuentas(Long idCliente, Throwable t) {
+        logger.error("Fallo al obtener cuentas para el cliente ID {}: {}", idCliente, t.getMessage());
+        throw new RuntimeException("Servicio de cuentas no disponible. Intente más tarde.");
     }
 }

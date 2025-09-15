@@ -12,4 +12,6 @@ public interface CuotaService {
     CuotaResponse saveCuota(CuotaRequest cuotaRequest);
     CuotaResponse updateCuota(Long id, CuotaRequest cuotaRequest);
     void deleteCuota(Long id);
+
+    List<CuotaResponse> getCuotasByPrestamoId(Long prestamoId);
 }

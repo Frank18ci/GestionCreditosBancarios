@@ -3,6 +3,7 @@ package org.nttdata.com.serviciocuentas.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.serviciocuentas.dto.CuentaRequest;
 import org.nttdata.com.serviciocuentas.dto.CuentaResponse;
+import org.nttdata.com.serviciocuentas.exception.ResourceNotFound;
 import org.nttdata.com.serviciocuentas.model.Cuenta;
 import org.nttdata.com.serviciocuentas.repository.CuentaRepository;
 import org.nttdata.com.serviciocuentas.service.CuentaService;
@@ -63,7 +64,7 @@ public class CuentaServiceImpl implements CuentaService {
         Optional<Cuenta> cuentaOpt = cuentaRepository.findById(id);
         if (cuentaOpt.isEmpty()) {
             logger.warn("Cuenta no encontrada ID: {}", id);
-            throw new RuntimeException("Cuenta no encontrada con ID: " + id);
+            throw new ResourceNotFound("Cuenta no encontrada con ID: " + id);
         }
 
         return cuentaMapper.toDto(cuentaOpt.get());

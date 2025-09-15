@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -23,7 +24,7 @@ public class Cuota {
     private Integer numero;
     @Temporal(TemporalType.DATE)
     private Date fechaVencimiento;
-    private Double monto;
+    private BigDecimal monto;
     @ManyToOne
     private EstadoCuota estadoCuota;
 }

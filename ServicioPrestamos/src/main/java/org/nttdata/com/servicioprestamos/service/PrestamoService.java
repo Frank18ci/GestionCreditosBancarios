@@ -13,4 +13,6 @@ public interface PrestamoService {
     PrestamoResponse createPrestamo(PrestamoRequest prestamoDto);
     PrestamoResponse updatePrestamo(Long id, PrestamoRequest prestamoDto);
     void deletePrestamo(Long id);
+    List<PrestamoResponse> getPrestamosByClienteId(Long clienteId);
+    PrestamoResponse aceptarPrestamo(Long id);
 }

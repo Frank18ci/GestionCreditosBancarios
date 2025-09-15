@@ -21,6 +21,10 @@ public class CuotaController {
     public ResponseEntity<?> obtenerCuotaPorId(@PathVariable Long id) {
         return ResponseEntity.ok(cuotaService.getCuotaById(id));
     }
+    @GetMapping("/prestamo/{prestamoId}")
+    public ResponseEntity<?> obtenerCuotasPorPrestamoId(@PathVariable Long prestamoId) {
+        return ResponseEntity.ok(cuotaService.getCuotasByPrestamoId(prestamoId));
+    }
     @PostMapping
     public ResponseEntity<?> crearCuota(@Valid @RequestBody CuotaRequest cuotaRequest) {
         return ResponseEntity.ok(cuotaService.saveCuota(cuotaRequest));

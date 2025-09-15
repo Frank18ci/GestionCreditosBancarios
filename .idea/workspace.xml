@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="" />
+    
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +14,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -67,7 +69,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,13 +80,19 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos\src\main\java\org\nttdata\com\servicioprestamos\client\dto" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\exception" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\exception" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones\src\main\java\org\nttdata\com\serviciotransacciones\exception" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.nttdata.com.servicioprestamos.client.dto" />
+      <recent name="org.nttdata.com.servicioclientes.exception" />
       <recent name="org.nttdata.com.servicioprestamos.exception" />
     </key>
   </component>
@@ -171,6 +179,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ServicioClientesApplication" />
+      <item itemvalue="Spring Boot.ServicioCuentasApplication" />
+      <item itemvalue="Spring Boot.ServicioEurekaApplication" />
+      <item itemvalue="Spring Boot.ServicioPrestamosApplication" />
+      <item itemvalue="Spring Boot.ServicioTransaccionesApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
