@@ -121,44 +121,39 @@ public class ClienteServiceImpl implements ClienteService {
     public ClienteResponse actualizarCliente(Long id, ClienteRequest request) {
         logger.info("Actualizando cliente ID: {}", id);
 
-        try {
-            Cliente cliente = clienteRepository.findById(id)
-                    .orElseThrow(() -> {
-                        logger.error("Cliente no encontrado para actualizar: {}", id);
-                        return new RuntimeException("Cliente no encontrado con ID: " + id);
-                    });
+        Cliente cliente = clienteRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Cliente no encontrado para actualizar: {}", id);
+                    return new ResourceNotFound("Cliente no encontrado con ID: " + id);
+                });
 
-            // Validar que el DNI
-            if (!cliente.getDni().equals(request.dni())) {
-                if (clienteRepository.findByDni(request.dni()).isPresent()) {
-                    logger.warn("DNI ya registrado por otro cliente: {}", request.dni());
-                    throw new RuntimeException("DNI ya registrado por otro cliente: " + request.dni());
-                }
+        // Validar que el DNI
+        if (!cliente.getDni().equals(request.dni())) {
+            if (clienteRepository.findByDni(request.dni()).isPresent()) {
+                logger.warn("DNI ya registrado por otro cliente: {}", request.dni());
+                throw new BadRequest("DNI ya registrado por otro cliente: " + request.dni());
             }
-
-            // Validar que el Email no esté usado por otro cliente
-            if (!cliente.getEmail().equals(request.email())) {
-                if (clienteRepository.findByEmail(request.email()).isPresent()) {
-                    logger.warn("Email ya registrado por otro cliente: {}", request.email());
-                    throw new RuntimeException("Email ya registrado por otro cliente: " + request.email());
-                }
-            }
-
-            // Actualizar datos
-            cliente.setNombre(request.nombre());
-            cliente.setDni(request.dni());
-            cliente.setEmail(request.email());
-            cliente.setEstadoCliente(clienteMapper.toEntity(request).getEstadoCliente());
-
-            Cliente clienteActualizado = clienteRepository.save(cliente);
-            logger.info("Cliente actualizado exitosamente: {}", id);
-
-            return clienteMapper.toDto(clienteActualizado);
-
-        } catch (Exception e) {
-            logger.error("Error al actualizar cliente ID {}: {}", id, e.getMessage());
-            throw new RuntimeException("Error al actualizar cliente: " + e.getMessage());
         }
+
+        // Validar que el Email no esté usado por otro cliente
+        if (!cliente.getEmail().equals(request.email())) {
+            if (clienteRepository.findByEmail(request.email()).isPresent()) {
+                logger.warn("Email ya registrado por otro cliente: {}", request.email());
+                throw new RuntimeException("Email ya registrado por otro cliente: " + request.email());
+            }
+        }
+
+        // Actualizar datos
+        cliente.setNombre(request.nombre());
+        cliente.setDni(request.dni());
+        cliente.setEmail(request.email());
+        cliente.setEstadoCliente(clienteMapper.toEntity(request).getEstadoCliente());
+
+        Cliente clienteActualizado = clienteRepository.save(cliente);
+        logger.info("Cliente actualizado exitosamente: {}", id);
+
+        return clienteMapper.toDto(clienteActualizado);
+
     }
 
     @Override
@@ -244,7 +239,7 @@ public class ClienteServiceImpl implements ClienteService {
         return getClienteResponse(id, keycloakId);
     }
 
-    private ClienteResponse getClienteResponse(Long id, String keycloakId) {
+    public ClienteResponse getClienteResponse(Long id, String keycloakId) {
         Optional<Cliente> clienteOpt = clienteRepository.findById(id);
         if (clienteOpt.isPresent()) {
             Cliente clienteToUpdate = clienteOpt.get();

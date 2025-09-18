@@ -4,3 +4,5 @@
 
 # Otros
 *.log
+
+.idea/workspace.xml
