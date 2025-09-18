@@ -6,7 +6,9 @@ import org.nttdata.com.servicioprestamos.dto.PrestamoRequest;
 import org.nttdata.com.servicioprestamos.service.PrestamoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/prestamos")
@@ -36,6 +38,7 @@ public class PrestamoController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
     @PostMapping("/aprobar/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> aceptarPrestamo(@PathVariable Long id) {
 
         return ResponseEntity.ok(prestamoService.aceptarPrestamo(id));

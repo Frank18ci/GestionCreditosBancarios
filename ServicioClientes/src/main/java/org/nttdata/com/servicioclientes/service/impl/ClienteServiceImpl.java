@@ -8,70 +8,56 @@ import org.nttdata.com.servicioclientes.client.CuentaClient;
 import org.nttdata.com.servicioclientes.client.dto.CuentaResponse;
 import org.nttdata.com.servicioclientes.dto.ClienteRequest;
 import org.nttdata.com.servicioclientes.dto.ClienteResponse;
+import org.nttdata.com.servicioclientes.exception.BadRequest;
 import org.nttdata.com.servicioclientes.exception.ResourceNotFound;
 import org.nttdata.com.servicioclientes.model.Cliente;
 import org.nttdata.com.servicioclientes.repository.ClienteRepository;
 import org.nttdata.com.servicioclientes.service.ClienteService;
+import org.nttdata.com.servicioclientes.util.ClienteMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
 @RequiredArgsConstructor
 public class ClienteServiceImpl implements ClienteService {
     private final ClienteRepository clienteRepository;
+    private final ClienteMapper clienteMapper;
     private final CuentaClient cuentaClient;
 
     private static final Logger logger = LoggerFactory.getLogger(ClienteServiceImpl.class);
 
-    private ClienteResponse mapToResponse(Cliente cliente) {
-        ClienteResponse response = new ClienteResponse();
-        response.setId(cliente.getId());
-        response.setNombre(cliente.getNombre());
-        response.setDni(cliente.getDni());
-        response.setEmail(cliente.getEmail());
-        response.setEstado(cliente.getEstado());
-        return response;
-    }
 
-    private Cliente mapToEntity(ClienteRequest request) {
-        Cliente cliente = new Cliente();
-        cliente.setNombre(request.getNombre());
-        cliente.setDni(request.getDni());
-        cliente.setEmail(request.getEmail());
-        cliente.setEstado(request.getEstado());
-        return cliente;
-    }
 
     @Override
     @Transactional
     public ClienteResponse crearCliente(ClienteRequest request) {
-        logger.info("Intentando crear cliente: {}", request.getDni());
+        logger.info("Intentando crear cliente: {}", request.dni());
 
         try {
             // Validar DNI único
-            if (clienteRepository.findByDni(request.getDni()).isPresent()) {
-                logger.warn("DNI ya registrado: {}", request.getDni());
-                throw new RuntimeException("DNI ya registrado: " + request.getDni());
+            if (clienteRepository.findByDni(request.dni()).isPresent()) {
+                logger.warn("DNI ya registrado: {}", request.dni());
+                throw new RuntimeException("DNI ya registrado: " + request.dni());
             }
 
             // Validar Email único
-            if (clienteRepository.findByEmail(request.getEmail()).isPresent()) {
-                logger.warn("Email ya registrado: {}", request.getEmail());
-                throw new RuntimeException("Email ya registrado: " + request.getEmail());
+            if (clienteRepository.findByEmail(request.email()).isPresent()) {
+                logger.warn("Email ya registrado: {}", request.email());
+                throw new RuntimeException("Email ya registrado: " + request.email());
             }
 
-            Cliente cliente = mapToEntity(request);
+            Cliente cliente = clienteMapper.toEntity(request);
             Cliente clienteGuardado = clienteRepository.save(cliente);
             logger.info("Cliente creado exitosamente: {}", clienteGuardado.getId());
 
-            return mapToResponse(clienteGuardado);
+            return clienteMapper.toDto(clienteGuardado);
 
         } catch (DataIntegrityViolationException e) {
             logger.error("Error de integridad de datos: {}", e.getMessage());
@@ -94,7 +80,7 @@ public class ClienteServiceImpl implements ClienteService {
                 });
 
         logger.info("Cliente encontrado: {}", cliente.getNombre());
-        return mapToResponse(cliente);
+        return clienteMapper.toDto(cliente);
     }
 
     @Override
@@ -105,22 +91,18 @@ public class ClienteServiceImpl implements ClienteService {
         List<Cliente> clientes = clienteRepository.findAll();
         logger.info("Encontrados {} clientes", clientes.size());
 
-        return clientes.stream()
-                .map(this::mapToResponse)
-                .toList();
+        return clienteMapper.toDtoList(clientes);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<ClienteResponse> obtenerClientesPorEstado(String estado) {
-        logger.info("Buscando clientes por estado: {}", estado);
+    public List<ClienteResponse> obtenerClientesPorEstado(Long estadoId) {
+        logger.info("Buscando clientes por estado: {}", estadoId);
 
-        List<Cliente> clientes = clienteRepository.findByEstado(estado);
-        logger.info("Encontrados {} clientes con estado {}", clientes.size(), estado);
+        List<Cliente> clientes = clienteRepository.findByEstado(estadoId);
+        logger.info("Encontrados {} clientes con estado {}", clientes.size(), estadoId);
 
-        return clientes.stream()
-                .map(this::mapToResponse)
-                .toList();
+        return clienteMapper.toDtoList(clientes);
     }
 
     @Override
@@ -131,9 +113,7 @@ public class ClienteServiceImpl implements ClienteService {
         List<Cliente> clientes = clienteRepository.findByNombreContaining(nombre);
         logger.info("Encontrados {} clientes con nombre que contiene '{}'", clientes.size(), nombre);
 
-        return clientes.stream()
-                .map(this::mapToResponse)
-                .toList();
+        return clienteMapper.toDtoList(clientes);
     }
 
     @Override
@@ -149,31 +129,31 @@ public class ClienteServiceImpl implements ClienteService {
                     });
 
             // Validar que el DNI
-            if (!cliente.getDni().equals(request.getDni())) {
-                if (clienteRepository.findByDni(request.getDni()).isPresent()) {
-                    logger.warn("DNI ya registrado por otro cliente: {}", request.getDni());
-                    throw new RuntimeException("DNI ya registrado por otro cliente: " + request.getDni());
+            if (!cliente.getDni().equals(request.dni())) {
+                if (clienteRepository.findByDni(request.dni()).isPresent()) {
+                    logger.warn("DNI ya registrado por otro cliente: {}", request.dni());
+                    throw new RuntimeException("DNI ya registrado por otro cliente: " + request.dni());
                 }
             }
 
             // Validar que el Email no esté usado por otro cliente
-            if (!cliente.getEmail().equals(request.getEmail())) {
-                if (clienteRepository.findByEmail(request.getEmail()).isPresent()) {
-                    logger.warn("Email ya registrado por otro cliente: {}", request.getEmail());
-                    throw new RuntimeException("Email ya registrado por otro cliente: " + request.getEmail());
+            if (!cliente.getEmail().equals(request.email())) {
+                if (clienteRepository.findByEmail(request.email()).isPresent()) {
+                    logger.warn("Email ya registrado por otro cliente: {}", request.email());
+                    throw new RuntimeException("Email ya registrado por otro cliente: " + request.email());
                 }
             }
 
             // Actualizar datos
-            cliente.setNombre(request.getNombre());
-            cliente.setDni(request.getDni());
-            cliente.setEmail(request.getEmail());
-            cliente.setEstado(request.getEstado());
+            cliente.setNombre(request.nombre());
+            cliente.setDni(request.dni());
+            cliente.setEmail(request.email());
+            cliente.setEstadoCliente(clienteMapper.toEntity(request).getEstadoCliente());
 
             Cliente clienteActualizado = clienteRepository.save(cliente);
             logger.info("Cliente actualizado exitosamente: {}", id);
 
-            return mapToResponse(clienteActualizado);
+            return clienteMapper.toDto(clienteActualizado);
 
         } catch (Exception e) {
             logger.error("Error al actualizar cliente ID {}: {}", id, e.getMessage());
@@ -243,8 +223,36 @@ public class ClienteServiceImpl implements ClienteService {
             throw new ResourceNotFound("No se encontraron cuentas para el cliente ID: " + idCliente);
         }
     }
+
+
+
     public List<CuentaResponse> fallbackObtenerClienteConCuentas(Long idCliente, Throwable t) {
         logger.error("Fallo al obtener cuentas para el cliente ID {}: {}", idCliente, t.getMessage());
         throw new RuntimeException("Servicio de cuentas no disponible. Intente más tarde.");
+    }
+    @Override
+    public ClienteResponse registerKeyCloakId(Long id, String keycloakId) {
+        Optional<Cliente> cliente = clienteRepository.findByKeycloakId(keycloakId);
+        if (cliente.isPresent()) {
+            throw new BadRequest("El Keycloak ID ya está registrado con otro cliente.");
+        }
+        return getClienteResponse(id, keycloakId);
+    }
+
+    @Override
+    public ClienteResponse updateKeyCloakId(Long id, String keycloakId) {
+        return getClienteResponse(id, keycloakId);
+    }
+
+    private ClienteResponse getClienteResponse(Long id, String keycloakId) {
+        Optional<Cliente> clienteOpt = clienteRepository.findById(id);
+        if (clienteOpt.isPresent()) {
+            Cliente clienteToUpdate = clienteOpt.get();
+            clienteToUpdate.setKeycloakId(keycloakId);
+            Cliente updatedCliente = clienteRepository.save(clienteToUpdate);
+            return clienteMapper.toDto(updatedCliente);
+        } else {
+            throw new ResourceNotFound("Cliente no encontrado con ID: " + id);
+        }
     }
 }

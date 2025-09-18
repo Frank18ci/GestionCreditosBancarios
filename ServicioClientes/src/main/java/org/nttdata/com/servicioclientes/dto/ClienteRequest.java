@@ -1,22 +1,21 @@
 package org.nttdata.com.servicioclientes.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.*;
+import lombok.Builder;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class ClienteRequest {
+@Builder
+public record ClienteRequest(
     @NotBlank(message = "El nombre no puede estar vacío")
-    private String nombre;
+    String nombre,
     @NotBlank(message = "El apellido no puede estar vacío")
-    private String dni;
-    @Email
+
+    @Size(message = "El dni no puede tener más de 8 caracteres", max = 8, min = 8)
+    String dni,
+    @Email(message = "El email debe tener un formato válido")
     @NotBlank(message = "El email no puede estar vacío")
-    private String email;
-    @NotBlank(message = "El estado no puede estar vacío")
-    private String estado;
-}
+    String email,
+    @NotNull(message = "El ID del estado no puede ser nulo")
+    Long estadoClienteId
+){
+
+        }

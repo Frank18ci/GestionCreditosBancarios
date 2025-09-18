@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
@@ -64,7 +63,7 @@ public class CuotaServiceImpl implements CuotaService {
             throw new IllegalStateException("No se pudo consultar la cuenta: " + ex.getMessage(), ex);
         }
         // verificar saldo
-        if(cuentaResp.getSaldo().compareTo(cuota.getMonto()) < 0){
+        if(cuentaResp.saldo().compareTo(cuota.getMonto()) < 0){
             throw new IllegalStateException("Saldo insuficiente en la cuenta para pagar la cuota");
         }
         //hoy
@@ -89,10 +88,10 @@ public class CuotaServiceImpl implements CuotaService {
         CuentaResponse cuentaResponse = cuentaClient.getCuentaById(cuentaId);
 
         CuentaRequest cuentaRequest = CuentaRequest.builder()
-                .estadoCuentaId(cuentaResponse.getEstadoCuenta().getId())
-                .tipoCuentaId(cuentaResponse.getTipoCuenta().getId())
-                .clienteId(cuentaResponse.getClienteId())
-                .saldo(cuentaResponse.getSaldo().subtract(transaccion.getMonto()))
+                .estadoCuentaId(cuentaResponse.estadoCuenta().id())
+                .tipoCuentaId(cuentaResponse.tipoCuenta().id())
+                .clienteId(cuentaResponse.clienteId())
+                .saldo(cuentaResponse.saldo().subtract(transaccion.monto()))
                 .build();
 
         cuentaClient.updateCuenta(cuentaId, cuentaRequest);
@@ -116,10 +115,10 @@ public class CuotaServiceImpl implements CuotaService {
                 () -> new ResourceNotFound("Cuota no encontrada con id: " + id)
         );
         cuotaFound.setPrestamo(cuotaEntityRequest.getPrestamo());
-        cuotaFound.setNumero(cuotaRequest.getNumero());
-        cuotaFound.setMonto(cuotaRequest.getMonto());
-        cuotaFound.setFechaVencimiento(cuotaRequest.getFechaVencimiento());
-        cuotaFound.setMonto(cuotaRequest.getMonto());
+        cuotaFound.setNumero(cuotaRequest.numero());
+        cuotaFound.setMonto(cuotaRequest.monto());
+        cuotaFound.setFechaVencimiento(cuotaRequest.fechaVencimiento());
+        cuotaFound.setMonto(cuotaRequest.monto());
         cuotaFound.setEstadoCuota(cuotaEntityRequest.getEstadoCuota());
 
         return cuotaMapper.toDto(cuotaRepository.save(cuotaFound));

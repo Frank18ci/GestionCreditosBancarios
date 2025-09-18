@@ -50,7 +50,7 @@ public class EstadoPrestamoServiceImpl implements EstadoPrestamoService {
                 () -> new ResourceNotFound("Estado de préstamo no encontrado con id: " + id)
         );
 
-        estadoPRestamoFound.setNombre(estadoPrestamoDto.getNombre());
+        estadoPRestamoFound.setNombre(estadoPrestamoDto.nombre());
 
         return estadoPrestamoMapper.toDto(estadoPrestamoRepository.save(estadoPRestamoFound));
     }

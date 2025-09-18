@@ -49,11 +49,11 @@ public class TransaccionServiceImpl implements TransaccionService {
         Transaccion transaccionFound = transaccionRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Transaccion no encontrada con id: " + id)
         );
-        transaccionFound.setCuentaId(transaccionRequest.getCuentaId());
+        transaccionFound.setCuentaId(transaccionRequest.cuentaId());
         transaccionFound.setTipoTransaccion(transaccionMapper.toEntity(transaccionRequest).getTipoTransaccion());
-        transaccionFound.setMonto(transaccionRequest.getMonto());
-        transaccionFound.setFecha(transaccionRequest.getFecha());
-        transaccionFound.setReferencia(transaccionRequest.getReferencia());
+        transaccionFound.setMonto(transaccionRequest.monto());
+        transaccionFound.setFecha(transaccionRequest.fecha());
+        transaccionFound.setReferencia(transaccionRequest.referencia());
 
         return transaccionMapper.toDto(transaccionRepository.save(transaccionFound));
     }
@@ -73,7 +73,7 @@ public class TransaccionServiceImpl implements TransaccionService {
         CuentaResponse cuentaResponse;
         try{
             cuentaResponse = cuentaClient.getCuentaById(cuentaId);
-            if(cuentaResponse == null || cuentaResponse.getId() == null){
+            if(cuentaResponse == null || cuentaResponse.id() == null){
                 throw new ResourceNotFound("La cuenta con id: " + cuentaId + " no existe");
             }
         } catch (Exception ex){

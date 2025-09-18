@@ -91,16 +91,16 @@ public class PrestamoServiceImpl implements PrestamoService {
     public PrestamoResponse createPrestamo(PrestamoRequest prestamoDto) {
 
         //Verificar existencia del cliente
-        ClienteResponse clienteResponse = getClienteById(prestamoDto.getClienteId());
+        ClienteResponse clienteResponse = getClienteById(prestamoDto.clienteId());
         //Verificacion existencia de cuenta
-        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.getCuentaId());
+        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.cuentaId());
 
 
         //Evaluar credito
-        evalularCredito(prestamoDto.getCuentaId(), prestamoDto.getMonto());
-        evaluarMonto(prestamoDto.getPlazoMeses(), prestamoDto.getMonto(), prestamoDto.getTasaInteres());
-        evaluarPlazo(prestamoDto.getPlazoMeses(), prestamoDto.getMonto(), prestamoDto.getTasaInteres());
-        evaluarTasaInteres(prestamoDto.getTasaInteres(), prestamoDto.getMonto(), prestamoDto.getPlazoMeses());
+        evalularCredito(prestamoDto.cuentaId(), prestamoDto.monto());
+        evaluarMonto(prestamoDto.plazoMeses(), prestamoDto.monto(), prestamoDto.tasaInteres());
+        evaluarPlazo(prestamoDto.plazoMeses(), prestamoDto.monto(), prestamoDto.tasaInteres());
+        evaluarTasaInteres(prestamoDto.tasaInteres(), prestamoDto.monto(), prestamoDto.plazoMeses());
 
         //Generar prestamo
         Prestamo prestamo = prestamoMapper.toEntity(prestamoDto);
@@ -113,15 +113,15 @@ public class PrestamoServiceImpl implements PrestamoService {
         //Enviar notificación de creación de préstamo
         notificacionProducer.enviarNotificacion(NotificacionRequestK.builder()
                         .cliente(ClienteResponseK.builder()
-                                .id(clienteResponse.getId())
-                                .nombre(clienteResponse.getNombre())
-                                .email(clienteResponse.getEmail())
-                                .dni(clienteResponse.getDni())
-                                .estado(clienteResponse.getEstado())
+                                .id(clienteResponse.id())
+                                .nombre(clienteResponse.nombre())
+                                .email(clienteResponse.email())
+                                .dni(clienteResponse.dni())
+                                .estado(clienteResponse.estadoCliente().estado())
                                 .build())
                         .tipoNotificacionId(1L) // Tipo de notificación: Préstamo
                         .asunto("Creación de Préstamo")
-                        .mensaje("Su solicitud de préstamo por un monto de " + prestamoDto.getMonto() + " ha sido recibida y está en proceso de evaluación.")
+                        .mensaje("Su solicitud de préstamo por un monto de " + prestamoDto.monto() + " ha sido recibida y está en proceso de evaluación.")
                         .fechaEnvio(new Date())
                         .estadoNotificacionId(1L) // Estado: PENDIENTE
                 .build());
@@ -131,19 +131,19 @@ public class PrestamoServiceImpl implements PrestamoService {
     public void evalularCredito(Long cuentaId, BigDecimal montoSolicitado){
         List<TransaccionResponse> transaccionRealizdas = transaccionClient.obteTransacciones(cuentaId);
         BigDecimal ingresos = transaccionRealizdas.stream()
-                .filter(t -> t.getTipoTransaccion().getNombre().equalsIgnoreCase("DEPÓSITO"))
-                .map(TransaccionResponse::getMonto)
+                .filter(t -> t.tipoTransaccion().nombre().equalsIgnoreCase("DEPÓSITO"))
+                .map(TransaccionResponse::monto)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
 
         BigDecimal egresos = transaccionRealizdas.stream()
                 .filter(t -> {
-                    String tipo = t.getTipoTransaccion().getNombre().toUpperCase();
+                    String tipo = t.tipoTransaccion().nombre().toUpperCase();
                     return tipo.equalsIgnoreCase("RETIRO")
                             || tipo.equalsIgnoreCase("PAGO DE SERVICIO")
                             || tipo.equalsIgnoreCase("TRANSFERENCIA");
                 })
-                .map(TransaccionResponse::getMonto)
+                .map(TransaccionResponse::monto)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         BigDecimal capacidadPago = ingresos.multiply(new BigDecimal("0.3"));
@@ -221,23 +221,23 @@ public class PrestamoServiceImpl implements PrestamoService {
         );
 
         //Verificar existencia del cliente
-        ClienteResponse clienteResponse = getClienteById(prestamoDto.getClienteId());
+        ClienteResponse clienteResponse = getClienteById(prestamoDto.clienteId());
         //Verificacion existencia de cuenta
-        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.getCuentaId());
+        CuentaResponse cuentaResponse = getCuentaById(prestamoDto.cuentaId());
 
         //Evaluar credito
-        evalularCredito(prestamoDto.getCuentaId(), prestamoDto.getMonto());
-        evaluarMonto(prestamoDto.getPlazoMeses(), prestamoDto.getMonto(), prestamoDto.getTasaInteres());
-        evaluarPlazo(prestamoDto.getPlazoMeses(), prestamoDto.getMonto(), prestamoDto.getTasaInteres());
-        evaluarTasaInteres(prestamoDto.getTasaInteres(), prestamoDto.getMonto(), prestamoDto.getPlazoMeses());
+        evalularCredito(prestamoDto.cuentaId(), prestamoDto.monto());
+        evaluarMonto(prestamoDto.plazoMeses(), prestamoDto.monto(), prestamoDto.tasaInteres());
+        evaluarPlazo(prestamoDto.plazoMeses(), prestamoDto.monto(), prestamoDto.tasaInteres());
+        evaluarTasaInteres(prestamoDto.tasaInteres(), prestamoDto.monto(), prestamoDto.plazoMeses());
 
-        prestamoFound.setClienteId(prestamoDto.getClienteId());
-        prestamoFound.setCuentaId(prestamoDto.getCuentaId());
-        prestamoFound.setMonto(prestamoDto.getMonto());
-        prestamoFound.setPlazoMeses(prestamoDto.getPlazoMeses());
-        prestamoFound.setTasaInteres(prestamoDto.getTasaInteres());
+        prestamoFound.setClienteId(prestamoDto.clienteId());
+        prestamoFound.setCuentaId(prestamoDto.cuentaId());
+        prestamoFound.setMonto(prestamoDto.monto());
+        prestamoFound.setPlazoMeses(prestamoDto.plazoMeses());
+        prestamoFound.setTasaInteres(prestamoDto.tasaInteres());
         prestamoFound.setEstadoPrestamo(prestamoMapper.toEntity(prestamoDto).getEstadoPrestamo());
-        prestamoFound.setFechaDesembolso(prestamoDto.getFechaDesembolso());
+        prestamoFound.setFechaDesembolso(prestamoDto.fechaDesembolso());
         return prestamoMapper.toDto(prestamoRepository.save(prestamoFound));
     }
 
@@ -291,7 +291,7 @@ public class PrestamoServiceImpl implements PrestamoService {
 
         //Realizar deposito en la cuenta asociada al prestamo
         TransaccionRequest transaccionRequest = TransaccionRequest.builder()
-                .cuentaId(cuentaResponse.getId())
+                .cuentaId(cuentaResponse.id())
                 .tipoTransaccionId(1L)
                 .monto(prestamoFound.getMonto())
                 .fecha(Date.from(hoy.atStartOfDay(ZoneId.systemDefault()).toInstant()))
@@ -318,23 +318,23 @@ public class PrestamoServiceImpl implements PrestamoService {
         }
         // Actualizar saldo de la cuenta
         CuentaRequest cuentaRequest = CuentaRequest.builder()
-                .estadoCuentaId(cuentaResponse.getEstadoCuenta().getId())
-                .tipoCuentaId(cuentaResponse.getTipoCuenta().getId())
-                .clienteId(cuentaResponse.getClienteId())
-                .saldo(cuentaResponse.getSaldo().add(prestamoFound.getMonto()))
+                .estadoCuentaId(cuentaResponse.estadoCuenta().id())
+                .tipoCuentaId(cuentaResponse.tipoCuenta().id())
+                .clienteId(cuentaResponse.clienteId())
+                .saldo(cuentaResponse.saldo().add(prestamoFound.getMonto()))
                 .build();
 
-        cuentaClient.updateCuenta(cuentaResponse.getId(), cuentaRequest);
+        cuentaClient.updateCuenta(cuentaResponse.id(), cuentaRequest);
 
 
         //Enviar notificación de aceoptacion de préstamo
         notificacionProducer.enviarNotificacion(NotificacionRequestK.builder()
                 .cliente(ClienteResponseK.builder()
-                        .id(clienteResponse.getId())
-                        .nombre(clienteResponse.getNombre())
-                        .email(clienteResponse.getEmail())
-                        .dni(clienteResponse.getDni())
-                        .estado(clienteResponse.getEstado())
+                        .id(clienteResponse.id())
+                        .nombre(clienteResponse.nombre())
+                        .email(clienteResponse.email())
+                        .dni(clienteResponse.dni())
+                        .estado(clienteResponse.estadoCliente().estado())
                         .build())
                 .tipoNotificacionId(1L) // Tipo de notificación: Préstamo
                 .asunto("Creación de Préstamo")
