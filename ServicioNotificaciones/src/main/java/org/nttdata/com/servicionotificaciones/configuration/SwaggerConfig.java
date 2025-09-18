@@ -14,9 +14,9 @@ public class SwaggerConfig {
     OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Servicio de Clientes")
+                        .title("API de Servicio de Notificaciones")
                         .version("1.0.0")
-                        .description("API para gestionar clientes en una aplicación bancaria.")
+                        .description("API para gestionar notificaciones en una aplicación bancaria.")
                 )
                 .addSecurityItem(new SecurityRequirement().addList("keycloak"))
                 .components(new Components()

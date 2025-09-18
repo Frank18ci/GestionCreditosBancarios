@@ -45,7 +45,7 @@ public class TipoTransaccionServiceImpl implements TipoTransaccionService {
         TipoTransaccion tipoTransaccionFound = tipoTransaccionRepository.findById(id).orElseThrow(
                 () -> new ResolutionException("Tipo de transaccion no encontrado con id: " + id)
         );
-        tipoTransaccionFound.setNombre(tipoTransaccionRequest.getNombre());
+        tipoTransaccionFound.setNombre(tipoTransaccionRequest.nombre());
 
         return tipoTransaccionMapper.toDto(tipoTransaccionRepository.save(tipoTransaccionFound));
     }

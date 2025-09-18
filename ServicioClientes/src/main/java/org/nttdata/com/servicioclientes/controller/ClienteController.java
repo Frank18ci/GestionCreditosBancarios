@@ -8,9 +8,14 @@ import org.nttdata.com.servicioclientes.service.ClienteService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/clientes")
@@ -19,7 +24,7 @@ public class ClienteController {
     private final ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<ClienteResponse> crearCliente(@Valid @RequestBody ClienteRequest request) {
+    public ResponseEntity<?> crearCliente(@Valid @RequestBody ClienteRequest request) {
         ClienteResponse response = clienteService.crearCliente(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -44,10 +49,10 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.obtenerClienteConCuentas(idCliente));
     }
 
-    @GetMapping("/estado/{estado}")
+    @GetMapping("/estado/{estadoId}")
     public ResponseEntity<List<ClienteResponse>> obtenerClientesPorEstado(
-            @PathVariable String estado) {
-        List<ClienteResponse> responses = clienteService.obtenerClientesPorEstado(estado);
+            @PathVariable Long estadoId) {
+        List<ClienteResponse> responses = clienteService.obtenerClientesPorEstado(estadoId);
         return ResponseEntity.ok(responses);
     }
 
@@ -78,5 +83,30 @@ public class ClienteController {
             @RequestParam String nombre) {
         List<ClienteResponse> responses = clienteService.buscarPorNombre(nombre);
         return ResponseEntity.ok(responses);
+    }
+
+    //Funcionalidad de keycloak
+    @PostMapping("/register-keycloak/{id}")
+    public ResponseEntity<?> registerUser(@PathVariable Long id, JwtAuthenticationToken auth) {
+        String keycloakId = auth.getToken().getSubject();
+
+        return ResponseEntity.status(HttpStatus.OK).body(clienteService.registerKeyCloakId(id, keycloakId));
+    }
+    @PostMapping("/update-keycloak/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable Long id, JwtAuthenticationToken auth) {
+        String keycloakId = auth.getToken().getSubject();
+
+        return ResponseEntity.status(HttpStatus.OK).body(clienteService.updateKeyCloakId(id, keycloakId));
+    }
+    @GetMapping("/mis-roles")
+    public String misRoles(Authentication authentication) {
+        return authentication.getAuthorities()
+                .stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.joining(", "));
+    }
+    @GetMapping("/claims")
+    public Map<String, Object> verClaims(JwtAuthenticationToken authentication) {
+        return authentication.getToken().getClaims();
     }
 }

@@ -1,17 +1,13 @@
 package org.nttdata.com.servicioclientes.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Builder;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class ClienteResponse {
-    private Long id;
-    private String nombre;
-    private String dni;
-    private String email;
-    private String estado;
-
-}
+@Builder
+public record ClienteResponse(
+    Long id,
+    String nombre,
+    String dni,
+    String email,
+    EstadoClienteResponse estadoCliente,
+    String keycloakId
+){}

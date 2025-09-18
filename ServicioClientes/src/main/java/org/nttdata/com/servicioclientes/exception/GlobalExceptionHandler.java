@@ -1,6 +1,7 @@
 package org.nttdata.com.servicioclientes.exception;
 
 import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.ws.rs.BadRequestException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,5 +49,14 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body("Error de integridad de datos: posible duplicado");
+    }
+    @ExceptionHandler(BadRequest.class)
+    public ResponseEntity<?> handleBadRequest(BadRequest ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                HttpStatus.BAD_REQUEST.value(),
+                ex.getMessage(),
+                LocalDateTime.now().toString()
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 }

@@ -47,7 +47,7 @@ public class EstadoCuentaServiceImpl implements EstadoCuentaService {
         EstadoCuenta estadoCuentaFound = estadoCuentaRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Estado de cuenta no encontrado con id: " + id)
         );
-        estadoCuentaFound.setNombre(estadoCuentaRequest.getNombre());
+        estadoCuentaFound.setNombre(estadoCuentaRequest.nombre());
         return estadoCuentaMapper.toDto(estadoCuentaRepository.save(estadoCuentaFound));
     }
 

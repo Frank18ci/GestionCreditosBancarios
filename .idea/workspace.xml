@@ -5,23 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
-      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer/NotificacionConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer/dto/ClienteResponseK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer/dto/NotificacionRequestK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/producer/NotificacionProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/producer/dto/ClienteResponseK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/producer/dto/NotificacionRequestK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/EstadoClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/dto/EstadoClienteRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/dto/EstadoClienteResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception/BadRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/model/EstadoCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/repository/EstadoClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/EstadoClienteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/impl/EstadoClienteImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/util/ClienteMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/util/EstadoClienteMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/test/java/org/nttdata/com/servicionotificaciones/controller/EstadoNotificacionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/EstadoClienteResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/CuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/CuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/EstadoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/EstadoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/TipoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/client/dto/TipoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/dto/ClienteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/dto/ClienteRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/dto/ClienteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/dto/ClienteResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/repository/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/java/org/nttdata/com/servicioclientes/service/impl/ClienteServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServicioClientes/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/controller/TestMailController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/util/MainManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/service/MailManagerPersonalizado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioClientes/src/test/java/org/nttdata/com/servicioclientes/service/impl/ClienteServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioClientes/src/test/java/org/nttdata/com/servicioclientes/service/impl/ClienteServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/controller/CuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/controller/CuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/CuentaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/CuentaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/CuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/CuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/EstadoCuentaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/EstadoCuentaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/EstadoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/EstadoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/TipoCuentaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/TipoCuentaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/TipoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/dto/TipoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/EstadoCuentaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/EstadoCuentaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/TipoCuentaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/TipoCuentaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/ClienteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/ClienteResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/CuentaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/CuentaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/CuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/CuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/EstadoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/EstadoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoTransaccionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoTransaccionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoTransaccionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TipoTransaccionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TransaccionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TransaccionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TransaccionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/client/dto/TransaccionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/PrestamoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/controller/PrestamoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/CuotaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoCuotaRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoCuotaRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoCuotaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoCuotaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoPrestamoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoPrestamoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoPrestamoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/EstadoPrestamoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/PrestamoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/PrestamoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/PrestamoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/dto/PrestamoResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/CuotaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/EstadoCuotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/EstadoCuotaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/EstadoPrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/EstadoPrestamoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/java/org/nttdata/com/servicioprestamos/service/impl/PrestamoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioPrestamos/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto/CuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto/CuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto/EstadoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto/EstadoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto/TipoCuentaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto/TipoCuentaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TipoTransaccionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TipoTransaccionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TipoTransaccionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TipoTransaccionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TransaccionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TransaccionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TransaccionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/dto/TransaccionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TipoTransaccionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TipoTransaccionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TransaccionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TransaccionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/org/nttdata/com/apigateway/configuration/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +94,7 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -57,7 +118,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -88,9 +149,10 @@
     "Spring Boot.ServicioNotificacionesApplication.executor": "Run",
     "Spring Boot.ServicioPrestamosApplication.executor": "Run",
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "feature/crud-notificaciones",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioNotificaciones/src/main/java/org/nttdata/com/servicionotificaciones/consumer",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,16 +171,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones\src\main\java\org\nttdata\com\serviciotransacciones\client\dto" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones\consumer" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos\src\main\java\org\nttdata\com\servicioprestamos\client\dto" />
       <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\exception" />
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\exception" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.nttdata.com.servicioprestamos.client.dto" />
       <recent name="org.nttdata.com.servicioprestamos.producer.dto" />
       <recent name="org.nttdata.com.apigateway.configuration" />
-      <recent name="org.nttdata.com.servicioprestamos.client.dto" />
       <recent name="org.nttdata.com.servicioclientes.exception" />
       <recent name="org.nttdata.com.servicioprestamos.exception" />
     </key>
@@ -271,7 +333,8 @@
       <workItem from="1758056693015" duration="13733000" />
       <workItem from="1758116849480" duration="10196000" />
       <workItem from="1758127874949" duration="1595000" />
-      <workItem from="1758130511811" duration="12135000" />
+      <workItem from="1758130511811" duration="24130000" />
+      <workItem from="1758199693543" duration="11279000" />
     </task>
     <servers />
   </component>

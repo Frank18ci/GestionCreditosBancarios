@@ -16,8 +16,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     Optional<Cliente> findByDni(String dni);
     Optional<Cliente> findByEmail(String email);
 
-    @Query("SELECT c FROM Cliente c WHERE c.estado = :estado")
-    List<Cliente> findByEstado(@Param("estado") String estado);
+    @Query("SELECT c FROM Cliente c WHERE c.estadoCliente.id = :estado")
+    List<Cliente> findByEstado(@Param("estadoId") Long estadoId);
 
     List<Cliente> findByNombreContaining(String nombre);
 
@@ -29,4 +29,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
 
     boolean existsById(Long id);
+
+    Optional<Cliente> findByKeycloakId(String keycloakId);
 }

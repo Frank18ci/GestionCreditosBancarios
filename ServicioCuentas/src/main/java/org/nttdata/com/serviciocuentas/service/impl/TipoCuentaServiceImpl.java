@@ -40,7 +40,7 @@ public class TipoCuentaServiceImpl implements TipoCuentaService {
         TipoCuenta tipoCuentaFound = tipoCuentaRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Tipo de cuenta no encontrado con id: " + id)
         );
-        tipoCuentaFound.setNombre(tipoCuentaRequest.getNombre());
+        tipoCuentaFound.setNombre(tipoCuentaRequest.nombre());
         return tipoCuentaMapper.toDto(tipoCuentaRepository.save(tipoCuentaFound));
     }
 

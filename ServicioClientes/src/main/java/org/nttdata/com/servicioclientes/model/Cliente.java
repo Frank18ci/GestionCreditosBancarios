@@ -2,6 +2,7 @@ package org.nttdata.com.servicioclientes.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +26,8 @@ public class Cliente {
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false)
-    private String estado;
+    @ManyToOne
+    private EstadoCliente estadoCliente;
+
+    private String keycloakId;
 }

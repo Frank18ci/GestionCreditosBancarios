@@ -32,15 +32,15 @@ public class CuentaServiceImpl implements CuentaService {
     @Override
     @Transactional
     public CuentaResponse crearCuenta(CuentaRequest request) {
-        logger.info("Creando cuenta para cliente ID: {}", request.getClienteId());
+        logger.info("Creando cuenta para cliente ID: {}", request.clienteId());
 
         try {
             // Validaciones
-            if (request.getClienteId() == null) {
+            if (request.clienteId() == null) {
                 throw new RuntimeException("ID de cliente es requerido");
             }
 
-            if (request.getTipoCuentaId() == null || request.getEstadoCuentaId() == null) {
+            if (request.tipoCuentaId() == null || request.estadoCuentaId() == null) {
                 throw new RuntimeException("Tipo y estado de cuenta son requeridos");
             }
 
@@ -106,16 +106,16 @@ public class CuentaServiceImpl implements CuentaService {
             Cuenta cuenta = cuentaOpt.get();
 
             // Actualizar solo campos proporcionados
-            if (request.getTipoCuentaId() != null) {
+            if (request.tipoCuentaId() != null) {
                 cuenta.setTipoCuenta(cuentaRequest.getTipoCuenta());
             }
 
-            if (request.getEstadoCuentaId() != null) {
+            if (request.estadoCuentaId() != null) {
                 cuenta.setEstadoCuenta(cuentaRequest.getEstadoCuenta());
             }
 
-            if (request.getSaldo() != null) {
-                cuenta.setSaldo(request.getSaldo());
+            if (request.saldo() != null) {
+                cuenta.setSaldo(request.saldo());
             }
 
             Cuenta cuentaActualizada = cuentaRepository.save(cuenta);
@@ -136,7 +136,7 @@ public class CuentaServiceImpl implements CuentaService {
 
         try {
             if (!cuentaRepository.existsById(id)) {
-                throw new RuntimeException("Cuenta no encontrada con ID: " + id);
+                throw new ResourceNotFound("Cuenta no encontrada con ID: " + id);
             }
 
             cuentaRepository.deleteById(id);

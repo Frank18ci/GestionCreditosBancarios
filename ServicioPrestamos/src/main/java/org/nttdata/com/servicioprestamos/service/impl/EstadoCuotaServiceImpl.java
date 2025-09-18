@@ -47,7 +47,7 @@ public class EstadoCuotaServiceImpl implements EstadoCuotaService {
         EstadoCuota estadoCuotaFound = estadoCuotaRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Estado de cuota no encontrado con id: " + id)
         );
-        estadoCuotaFound.setNombre(estadoCuotaRequest.getNombre());
+        estadoCuotaFound.setNombre(estadoCuotaRequest.nombre());
 
         return estadoCuotaMapper.toDto(estadoCuotaRepository.save(estadoCuotaFound));
     }

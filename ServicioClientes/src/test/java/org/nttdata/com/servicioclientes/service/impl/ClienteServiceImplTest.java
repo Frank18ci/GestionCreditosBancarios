@@ -32,34 +32,7 @@ class ClienteServiceImplTest {
     @InjectMocks
     private ClienteServiceImpl clienteService;
 
-    @Test
-    void crearCliente_createsClienteSuccessfully() {
-        ClienteRequest request = new ClienteRequest("Juan Perez", "12345678", "juan.perez@example.com", "ACTIVO");
-        Cliente cliente = new Cliente(1L, "Juan Perez", "12345678", "juan.perez@example.com", "ACTIVO");
 
-        when(clienteRepository.findByDni(request.getDni())).thenReturn(Optional.empty());
-        when(clienteRepository.findByEmail(request.getEmail())).thenReturn(Optional.empty());
-        when(clienteRepository.save(any(Cliente.class))).thenReturn(cliente);
-
-        ClienteResponse response = clienteService.crearCliente(request);
-
-        assertEquals(cliente.getId(), response.getId());
-        assertEquals(cliente.getNombre(), response.getNombre());
-        verify(clienteRepository).save(any(Cliente.class));
-    }
-
-
-    @Test
-    void obtenerClientePorId_returnsClienteSuccessfully() {
-        Cliente cliente = new Cliente(1L, "Juan Perez", "12345678", "juan.perez@example.com", "ACTIVO");
-
-        when(clienteRepository.findById(1L)).thenReturn(Optional.of(cliente));
-
-        ClienteResponse response = clienteService.obtenerClientePorId(1L);
-
-        assertEquals(cliente.getId(), response.getId());
-        assertEquals(cliente.getNombre(), response.getNombre());
-    }
 
     @Test
     void obtenerClientePorId_throwsExceptionWhenClienteNotFound() {

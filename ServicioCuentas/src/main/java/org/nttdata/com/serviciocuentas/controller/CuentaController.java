@@ -1,12 +1,12 @@
 package org.nttdata.com.serviciocuentas.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.nttdata.com.serviciocuentas.dto.CuentaRequest;
 import org.nttdata.com.serviciocuentas.dto.CuentaResponse;
 import org.nttdata.com.serviciocuentas.service.CuentaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +17,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cuentas")
+@RequiredArgsConstructor
 public class CuentaController {
 
     private static final Logger logger = LoggerFactory.getLogger(CuentaController.class);
 
-    @Autowired
-    private CuentaService cuentaService;
+    private final CuentaService cuentaService;
 
     @PostMapping
     public ResponseEntity<?> crearCuenta(@Valid @RequestBody CuentaRequest request) {
@@ -30,7 +30,7 @@ public class CuentaController {
 
         try {
             CuentaResponse response = cuentaService.crearCuenta(request);
-            logger.info("Cuenta creada exitosamente ID: {}", response.getId());
+            logger.info("Cuenta creada exitosamente ID: {}", response.id());
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
         } catch (Exception e) {
