@@ -1,6 +1,7 @@
 package org.nttdata.com.serviciocuentas.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.nttdata.com.serviciocuentas.client.ClienteClient;
 import org.nttdata.com.serviciocuentas.dto.CuentaRequest;
 import org.nttdata.com.serviciocuentas.dto.CuentaResponse;
 import org.nttdata.com.serviciocuentas.exception.ResourceNotFound;
@@ -27,10 +28,14 @@ public class CuentaServiceImpl implements CuentaService {
     private final CuentaRepository cuentaRepository;
     private final CuentaMapper cuentaMapper;
     private final EstadoCuentaService estadoCuentaService;
+    private final ClienteClient clienteClient;
 
     @Override
     @Transactional
     public CuentaResponse crearCuenta(CuentaRequest request) {
+
+        clienteClient.getClienteById(request.clienteId()); // Verifica que el cliente exista
+
         logger.info("Creando cuenta para cliente ID: {}", request.clienteId());
 
         try {
@@ -83,6 +88,9 @@ public class CuentaServiceImpl implements CuentaService {
     @Override
     @Transactional
     public CuentaResponse actualizarCuenta(Long id, CuentaRequest request) {
+
+        clienteClient.getClienteById(request.clienteId()); // Verifica que el cliente exista
+
         Cuenta cuentaRequest = cuentaMapper.toEntity(request);
         logger.info("Actualizando cuenta ID: {}", id);
 

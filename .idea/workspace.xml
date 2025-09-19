@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Merge branch 'main' of https://github.com/Frank18ci/GestionCreditosBancarios into feature/tests&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="b31482ab-af5d-4a69-bea0-04e2b1019491" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/ClienteClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/dto/ClienteResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/dto/EstadoClienteResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/TipoCuentaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/TipoCuentaControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/ServicioCuentasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/ServicioCuentasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/FeignClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/FeignClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TransaccionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TransaccionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TransaccionServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TransaccionServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,163 +26,38 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Interface" />
-        <option value="Exception" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Frank18ci&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Frank18ci/GestionCreditosBancarios.git&quot;,
-    &quot;accountId&quot;: &quot;1a68f355-6baa-483a-b264-deae6e3f1497&quot;
-  }
-}</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 7
-}</component>
-  <component name="ProjectId" id="32heg1B6lhShM14F4gbxNX0Nail" />
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="32vi8AhJjWhSwpGevn80pab4iuk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.All in ServicioTransacciones.executor": "Coverage",
-    "JUnit.ClienteServiceImplTest.executor": "Run",
-    "JUnit.CuotaControllerTest.executor": "Coverage",
-    "JUnit.CuotaControllerTest.obtenerCuotasPorPrestamoIdTest.executor": "Run",
-    "JUnit.CuotaControllerTest.pagarCuotaTest.executor": "Run",
-    "JUnit.CuotaControllerTest.testCreateCuota.executor": "Run",
-    "JUnit.CuotaControllerTest.testDeleteCuota.executor": "Run",
-    "JUnit.CuotaControllerTest.testGetCuotaById.executor": "Run",
-    "JUnit.CuotaControllerTest.testGetCuotasByPrestamoId.executor": "Run",
-    "JUnit.CuotaControllerTest.testUpdateCuota.executor": "Run",
-    "JUnit.CuotaMapperTest.executor": "Run",
-    "JUnit.CuotaServiceTest.deleteCuotaResourceNotFoundTest.executor": "Run",
-    "JUnit.CuotaServiceTest.deleteCuotaTest.executor": "Run",
-    "JUnit.CuotaServiceTest.executor": "Coverage",
-    "JUnit.CuotaServiceTest.getAllCuotasTest.executor": "Run",
-    "JUnit.CuotaServiceTest.getCuotaByIdResourceNotFoundTest.executor": "Run",
-    "JUnit.CuotaServiceTest.getCuotaByIdTest.executor": "Run",
-    "JUnit.CuotaServiceTest.getCuotasByPrestamoId.executor": "Coverage",
-    "JUnit.CuotaServiceTest.pagarCuotaAccountNotFoundTest.executor": "Run",
-    "JUnit.CuotaServiceTest.pagarCuotaInsufficientBalanceTest.executor": "Run",
-    "JUnit.CuotaServiceTest.pagarCuotaInvalidAmountTest.executor": "Run",
-    "JUnit.CuotaServiceTest.pagarCuotaNotFoundTest.executor": "Run",
-    "JUnit.CuotaServiceTest.pagarCuotaNotPendingTest.executor": "Run",
-    "JUnit.CuotaServiceTest.pagarCuotaTestSuccess.executor": "Run",
-    "JUnit.CuotaServiceTest.pagarCuotaTransactionErrorTest.executor": "Run",
-    "JUnit.CuotaServiceTest.saveCuotaTest.executor": "Run",
-    "JUnit.CuotaServiceTest.updateCuotaResourceNotFoundTest.executor": "Run",
-    "JUnit.CuotaServiceTest.updateCuotaTest.executor": "Run",
-    "JUnit.EstadoCuotaControllerTest.executor": "Coverage",
-    "JUnit.EstadoCuotaControllerTest.testActualizarEstadoCuota.executor": "Run",
-    "JUnit.EstadoCuotaControllerTest.testCrearEstadoCuota.executor": "Run",
-    "JUnit.EstadoCuotaControllerTest.testEliminarEstadoCuota.executor": "Run",
-    "JUnit.EstadoCuotaControllerTest.testGetAllEstadosCuotas.executor": "Run",
-    "JUnit.EstadoCuotaControllerTest.testGetEstadoCuotaById.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.deleteEstadoCuotaResourceNotFoundTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.deleteEstadoCuotaTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.executor": "Coverage",
-    "JUnit.EstadoCuotaServiceTest.getAllEstadosCuotaTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.getEstadoCuotaByIdResourceNotFoundTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.getEstadoCuotaByIdTest.executor": "Coverage",
-    "JUnit.EstadoCuotaServiceTest.getEstadoCuotaEntityByIdResourceNotFoundTest.executor": "Coverage",
-    "JUnit.EstadoCuotaServiceTest.getEstadoCuotaEntityByIdTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.saveEstadoCuotaTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.updateEstadoCuotaResourceNotFoundTest.executor": "Run",
-    "JUnit.EstadoCuotaServiceTest.updateEstadoCuotaTest.executor": "Run",
-    "JUnit.EstadoPrestamoControllerTest.executor": "Coverage",
-    "JUnit.EstadoPrestamoControllerTest.testCreateEstadoPrestamo.executor": "Run",
-    "JUnit.EstadoPrestamoControllerTest.testDeleteEstadoPrestamo.executor": "Run",
-    "JUnit.EstadoPrestamoControllerTest.testGetAllEstadosPrestamos.executor": "Run",
-    "JUnit.EstadoPrestamoControllerTest.testGetEstadoPrestamoById.executor": "Run",
-    "JUnit.EstadoPrestamoControllerTest.testUpdateEstadoPrestamo.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.createEstadoPrestamo_SavesAndReturnsEstadoPrestamoDto.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.deleteEstadoPrestamo_ExistingId_DeletesEstadoPrestamo.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.deleteEstadoPrestamo_NonExistingId_ThrowsResourceNotFound.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.executor": "Coverage",
-    "JUnit.EstadoPrestamoServiceImplTest.getAllEstadosPrestamo_ReturnsListOfEstadoPrestamoDto.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.getEstadoPrestamoById_ExistingId_ReturnsEstadoPrestamoDto.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.getEstadoPrestamoById_NonExistingId_ThrowsResourceNotFound.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.getEstadoPrestamoEntityById.executor": "Coverage",
-    "JUnit.EstadoPrestamoServiceImplTest.getEstadoPrestamoEntityById_NonExistingId_ThrowsResourceNotFound.executor": "Coverage",
-    "JUnit.EstadoPrestamoServiceImplTest.updateEstadoPrestamo_ExistingId_UpdatesAndReturnsEstadoPrestamoDto.executor": "Run",
-    "JUnit.EstadoPrestamoServiceImplTest.updateEstadoPrestamo_NonExistingId_ThrowsResourceNotFound.executor": "Run",
-    "JUnit.NotificacionConsumerTest.consumirNotificacionCreatesNotificationAndSendsEmail.executor": "Run",
-    "JUnit.NotificacionProducerTest.enviarNotificacionSuccess.executor": "Run",
-    "JUnit.NotificacionProducerTest.executor": "Coverage",
-    "JUnit.NotificacionServiceTest.executor": "Coverage",
-    "JUnit.NotificacionServiceTest.testActualizarNotificacion.executor": "Run",
-    "JUnit.NotificacionServiceTest.testActualizarNotificacionNoExistente.executor": "Run",
-    "JUnit.NotificacionServiceTest.testCrearNotificacion.executor": "Run",
-    "JUnit.NotificacionServiceTest.testEliminarNotificacion.executor": "Run",
-    "JUnit.NotificacionServiceTest.testEliminarNotificacionNoExistente.executor": "Run",
-    "JUnit.NotificacionServiceTest.testObtenerNotificacionPorId.executor": "Run",
-    "JUnit.NotificacionServiceTest.testObtenerNotificacionPorIdNoExistente.executor": "Run",
-    "JUnit.NotificacionServiceTest.testObtenerTodasLasNotificaciones.executor": "Run",
-    "JUnit.PrestamoControllerTest.aceptarPrestamoTest.executor": "Run",
-    "JUnit.PrestamoControllerTest.actualizarPrestamo.executor": "Debug",
-    "JUnit.PrestamoControllerTest.crearPrestamo.executor": "Run",
-    "JUnit.PrestamoControllerTest.eliminarPrestamo.executor": "Run",
-    "JUnit.PrestamoControllerTest.executor": "Coverage",
-    "JUnit.PrestamoControllerTest.listarPrestamos.executor": "Run",
-    "JUnit.PrestamoControllerTest.obtenerPrestamoPorId.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.aceptarPrestamoConMasDeTresPrestamosActivos.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.aceptarPrestamoNoPendiente.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.aceptarPrestamoNotFound.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.aceptarPrestamoSuccess.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.createPrestamoSuccess.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.createPrestamoTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.deletePrestamoResourceNotFoundTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.deletePrestamoTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.evaluarCreditoEgresosMayores.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.evaluarCreditoMontoMayorCapacidad.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.evaluarMontoMenorMinimo.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.evaluarPlazoMenorMinimo.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.evaluarTasaInteresMayorMaximo.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.executor": "Coverage",
-    "JUnit.PrestamoServiceImplTest.getAllPrestamosTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.getPrestamoByIdResourceNotFoundTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.getPrestamoByIdTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.getPrestamosByClienteIdResourceNotFoundTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.getPrestamosByClienteIdSuccess.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.updatePrestamoResourceNotFoundTest.executor": "Run",
-    "JUnit.PrestamoServiceImplTest.updatePrestamoSuccess.executor": "Run",
-    "JUnit.TipoCuentaControllerTest.getTipoCuentaById_WhenIdIsInvalid_ShouldReturnNotFound.executor": "Run",
-    "JUnit.java in ServicioClientes.executor": "Coverage",
-    "JUnit.java in ServicioCuentas.executor": "Coverage",
-    "JUnit.java in ServicioNotificaciones.executor": "Coverage",
-    "JUnit.java in ServicioPrestamos.executor": "Coverage",
-    "JUnit.java in ServicioTransacciones.executor": "Coverage",
-    "Maven.ServicioClientes [package].executor": "Run",
-    "Maven.ServicioCuentas [package].executor": "Run",
-    "Maven.ServicioNotificaciones [package].executor": "Run",
+    "JUnit.CuentaServiceImplTest.actualizarCuenta_deberiaFallarCuandoClienteNoExiste.executor": "Run",
+    "JUnit.CuentaServiceImplTest.crearCuenta_deberiaFallarCuandoClienteNoExiste.executor": "Run",
+    "JUnit.CuentaServiceImplTest.executor": "Run",
+    "JUnit.TransaccionServiceImplTest.createTransaccion_deberiaFallarCuandoCuentaNoExiste.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
@@ -182,42 +67,25 @@
     "Spring Boot.ServicioNotificacionesApplication.executor": "Run",
     "Spring Boot.ServicioPrestamosApplication.executor": "Run",
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
-    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "feature/tests",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="ReactorSettings">
-    <option name="notificationShown" value="true" />
-  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones\src\main\java\org\nttdata\com\serviciotransacciones\client\dto" />
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones\consumer" />
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones\src\main\java\org\nttdata\com\servicionotificaciones" />
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos\src\main\java\org\nttdata\com\servicioprestamos\client\dto" />
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioClientes\src\main\java\org\nttdata\com\servicioclientes\exception" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\client\dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.nttdata.com.servicioprestamos.client.dto" />
-      <recent name="org.nttdata.com.servicioprestamos.producer.dto" />
-      <recent name="org.nttdata.com.apigateway.configuration" />
-      <recent name="org.nttdata.com.servicioclientes.exception" />
-      <recent name="org.nttdata.com.servicioprestamos.exception" />
+      <recent name="org.nttdata.com.serviciocuentas.client.dto" />
+      <recent name="org.nttdata.com.serviciocuentas.client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -234,66 +102,91 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
-              <entry key="ConfigServerApplication" value="STOPPED" />
+              <entry key="ServicioCuentasApplication" value="STOPPED" />
               <entry key="ServicioPrestamosApplication" value="STOPPED" />
+              <entry key="ServicioTransaccionesApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in ServicioClientes">
-    <configuration name="TipoCuentaControllerTest.getTipoCuentaById_WhenIdIsInvalid_ShouldReturnNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TransaccionServiceImplTest.updateTransaccion_deberiaFallarCuandoCuentaNoExiste">
+    <configuration name="CuentaServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServicioCuentas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.controller.*" />
+          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.controller" />
-      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.controller.TipoCuentaControllerTest" />
-      <option name="METHOD_NAME" value="getTipoCuentaById_WhenIdIsInvalid_ShouldReturnNotFound" />
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.service" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.service.CuentaServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CuentaServiceImplTest.actualizarCuenta_deberiaFallarCuandoClienteNoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioCuentas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.service" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.service.CuentaServiceImplTest" />
+      <option name="METHOD_NAME" value="actualizarCuenta_deberiaFallarCuandoClienteNoExiste" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in ServicioClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ServicioClientes" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/ServicioClientes/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in ServicioCuentas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CuentaServiceImplTest.crearCuenta_deberiaFallarCuandoClienteNoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServicioCuentas" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/ServicioCuentas/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.service" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.service.CuentaServiceImplTest" />
+      <option name="METHOD_NAME" value="crearCuenta_deberiaFallarCuandoClienteNoExiste" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in ServicioNotificaciones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ServicioNotificaciones" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/ServicioNotificaciones/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in ServicioTransacciones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TransaccionServiceImplTest.createTransaccion_deberiaFallarCuandoCuentaNoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServicioTransacciones" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/ServicioTransacciones/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.serviciotransacciones.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciotransacciones.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciotransacciones.service.impl.TransaccionServiceImplTest" />
+      <option name="METHOD_NAME" value="createTransaccion_deberiaFallarCuandoCuentaNoExiste" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="api-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.apigateway.ApiGatewayApplication" />
+    <configuration name="TransaccionServiceImplTest.updateTransaccion_deberiaFallarCuandoCuentaNoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioTransacciones" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.serviciotransacciones.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciotransacciones.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciotransacciones.service.impl.TransaccionServiceImplTest" />
+      <option name="METHOD_NAME" value="updateTransaccion_deberiaFallarCuandoCuentaNoExiste" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -329,17 +222,6 @@
     <configuration name="ServicioNotificacionesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ServicioNotificaciones" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.servicionotificaciones.ServicioNotificacionesApplication" />
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="true" />
-        <option name="IS_SUBST" value="true" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH=".env" />
-        </ENTRIES>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -359,27 +241,26 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TipoCuentaControllerTest.getTipoCuentaById_WhenIdIsInvalid_ShouldReturnNotFound" />
-      <item itemvalue="JUnit.java in ServicioClientes" />
-      <item itemvalue="JUnit.java in ServicioCuentas" />
-      <item itemvalue="JUnit.java in ServicioTransacciones" />
-      <item itemvalue="JUnit.java in ServicioNotificaciones" />
-      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="JUnit.CuentaServiceImplTest" />
+      <item itemvalue="JUnit.CuentaServiceImplTest.actualizarCuenta_deberiaFallarCuandoClienteNoExiste" />
+      <item itemvalue="JUnit.CuentaServiceImplTest.crearCuenta_deberiaFallarCuandoClienteNoExiste" />
+      <item itemvalue="JUnit.TransaccionServiceImplTest.createTransaccion_deberiaFallarCuandoCuentaNoExiste" />
+      <item itemvalue="JUnit.TransaccionServiceImplTest.updateTransaccion_deberiaFallarCuandoCuentaNoExiste" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
-      <item itemvalue="Spring Boot.ServicioNotificacionesApplication" />
       <item itemvalue="Spring Boot.ServicioClientesApplication" />
       <item itemvalue="Spring Boot.ServicioCuentasApplication" />
       <item itemvalue="Spring Boot.ServicioEurekaApplication" />
+      <item itemvalue="Spring Boot.ServicioNotificacionesApplication" />
       <item itemvalue="Spring Boot.ServicioPrestamosApplication" />
       <item itemvalue="Spring Boot.ServicioTransaccionesApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in ServicioClientes" />
-        <item itemvalue="JUnit.java in ServicioCuentas" />
-        <item itemvalue="JUnit.TipoCuentaControllerTest.getTipoCuentaById_WhenIdIsInvalid_ShouldReturnNotFound" />
-        <item itemvalue="JUnit.java in ServicioNotificaciones" />
-        <item itemvalue="JUnit.java in ServicioTransacciones" />
+        <item itemvalue="JUnit.TransaccionServiceImplTest.updateTransaccion_deberiaFallarCuandoCuentaNoExiste" />
+        <item itemvalue="JUnit.TransaccionServiceImplTest.createTransaccion_deberiaFallarCuandoCuentaNoExiste" />
+        <item itemvalue="JUnit.CuentaServiceImplTest.crearCuenta_deberiaFallarCuandoClienteNoExiste" />
+        <item itemvalue="JUnit.CuentaServiceImplTest.actualizarCuenta_deberiaFallarCuandoClienteNoExiste" />
+        <item itemvalue="JUnit.CuentaServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -391,174 +272,18 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="" />
-      <created>1757877345155</created>
+      <changelist id="b31482ab-af5d-4a69-bea0-04e2b1019491" name="Changes" comment="" />
+      <created>1758307284514</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1757877345155</updated>
-      <workItem from="1757877346021" duration="9120000" />
-      <workItem from="1757953088877" duration="4897000" />
-      <workItem from="1758031419621" duration="6335000" />
-      <workItem from="1758038297643" duration="1093000" />
-      <workItem from="1758048343206" duration="1079000" />
-      <workItem from="1758056693015" duration="13733000" />
-      <workItem from="1758116849480" duration="10196000" />
-      <workItem from="1758127874949" duration="1595000" />
-      <workItem from="1758130511811" duration="24130000" />
-      <workItem from="1758199693543" duration="11279000" />
-      <workItem from="1758286616935" duration="346000" />
-      <workItem from="1758287820638" duration="13441000" />
+      <updated>1758307284514</updated>
+      <workItem from="1758307286246" duration="4613000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_actualizarCliente_success.ic" NAME="ClienteServiceTest.actualizarCliente_success Coverage Results" MODIFIED="1758233755537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_obtenerTodosLosClientes_success.ic" NAME="ClienteServiceTest.obtenerTodosLosClientes_success Coverage Results" MODIFIED="1758238870894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoCuotaServiceTest_getEstadoCuotaByIdTest.ic" NAME="EstadoCuotaServiceTest.getEstadoCuotaByIdTest Coverage Results" MODIFIED="1758297213111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_obtenerClientesPorEstado_success.ic" NAME="ClienteServiceTest.obtenerClientesPorEstado_success Coverage Results" MODIFIED="1758238719056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$NotificacionServiceTest.ic" NAME="NotificacionServiceTest Coverage Results" MODIFIED="1758250560481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoNotificacionServiceTest_testEliminarEstadoNotificacionInexistente.ic" NAME="EstadoNotificacionServiceTest.testEliminarEstadoNotificacionInexistente Coverage Results" MODIFIED="1758244325967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoClienteServiceTest_actualizarClienteNoExistenteTest.ic" NAME="EstadoClienteServiceTest.actualizarClienteNoExistenteTest Coverage Results" MODIFIED="1758232296104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$NotificacionControllerTest.ic" NAME="NotificacionControllerTest Coverage Results" MODIFIED="1758242573295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoPrestamoControllerTest.ic" NAME="EstadoPrestamoControllerTest Coverage Results" MODIFIED="1758290834574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$TipoNotificacionServiceTest.ic" NAME="TipoNotificacionServiceTest Coverage Results" MODIFIED="1758245270543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoNotificacionServiceTest_testEliminarEstadoNotificacion.ic" NAME="EstadoNotificacionServiceTest.testEliminarEstadoNotificacion Coverage Results" MODIFIED="1758244280596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_crearCliente_throwsExceptionWhenDniExists.ic" NAME="ClienteServiceTest.crearCliente_throwsExceptionWhenDniExists Coverage Results" MODIFIED="1758239147677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$java_in_ServicioClientes.ic" NAME="java in ServicioClientes Coverage Results" MODIFIED="1758305683663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_crearCliente_throwsExceptionWhenEmailExists.ic" NAME="ClienteServiceTest.crearCliente_throwsExceptionWhenEmailExists Coverage Results" MODIFIED="1758239222749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$java_in_ServicioNotificaciones.ic" NAME="java in ServicioNotificaciones Coverage Results" MODIFIED="1758304728957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_buscarClientesPorNombreContaining_success.ic" NAME="ClienteServiceTest.buscarClientesPorNombreContaining_success Coverage Results" MODIFIED="1758238466622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoPrestamoServiceImplTest.ic" NAME="EstadoPrestamoServiceImplTest Coverage Results" MODIFIED="1758296867854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$java_in_ServicioPrestamos.ic" NAME="java in ServicioPrestamos Coverage Results" MODIFIED="1758304483500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$PrestamoControllerTest.ic" NAME="PrestamoControllerTest Coverage Results" MODIFIED="1758293487493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoNotificacionServiceTest.ic" NAME="EstadoNotificacionServiceTest Coverage Results" MODIFIED="1758244212128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$PrestamoServiceImplTest.ic" NAME="PrestamoServiceImplTest Coverage Results" MODIFIED="1758303553561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteControllerTest.ic" NAME="ClienteControllerTest Coverage Results" MODIFIED="1758224679833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest.ic" NAME="ClienteServiceTest Coverage Results" MODIFIED="1758237322210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoClienteControllerTest_obtenerAllEstadosClientes.ic" NAME="EstadoClienteControllerTest.obtenerAllEstadosClientes Coverage Results" MODIFIED="1758221883058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoClienteServiceTest_obtenerUnEstadoClienteNoExistenteTest.ic" NAME="EstadoClienteServiceTest.obtenerUnEstadoClienteNoExistenteTest Coverage Results" MODIFIED="1758232141925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoPrestamoServiceImplTest_getEstadoPrestamoEntityById_NonExistingId_ThrowsResourceNotFound.ic" NAME="EstadoPrestamoServiceImplTest.getEstadoPrestamoEntityById_NonExistingId_ThrowsResourceNotFound Coverage Results" MODIFIED="1758296965275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_actualizarCliente_throwsExceptionWhenClienteNotFound.ic" NAME="ClienteServiceTest.actualizarCliente_throwsExceptionWhenClienteNotFound Coverage Results" MODIFIED="1758236492695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_crearCliente_success.ic" NAME="ClienteServiceTest.crearCliente_success Coverage Results" MODIFIED="1758238985614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoCuotaServiceTest_getEstadoCuotaEntityByIdResourceNotFoundTest.ic" NAME="EstadoCuotaServiceTest.getEstadoCuotaEntityByIdResourceNotFoundTest Coverage Results" MODIFIED="1758297673910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_registerKeyCloakId_shouldThrowBadRequestWhenKeycloakIdExists.ic" NAME="ClienteServiceTest.registerKeyCloakId_shouldThrowBadRequestWhenKeycloakIdExists Coverage Results" MODIFIED="1758239297950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_actualizarCliente_throwsExceptionWhenDniExists.ic" NAME="ClienteServiceTest.actualizarCliente_throwsExceptionWhenDniExists Coverage Results" MODIFIED="1758236975154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$CuotaServiceTest.ic" NAME="CuotaServiceTest Coverage Results" MODIFIED="1758299908792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_fallbackObtenerClienteConCuentas_shouldThrowRuntimeException.ic" NAME="ClienteServiceTest.fallbackObtenerClienteConCuentas_shouldThrowRuntimeException Coverage Results" MODIFIED="1758238085671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoCuotaControllerTest.ic" NAME="EstadoCuotaControllerTest Coverage Results" MODIFIED="1758291266623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_getClienteResponse_notFound.ic" NAME="ClienteServiceTest.getClienteResponse_notFound Coverage Results" MODIFIED="1758238193615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$java_in_ServicioCuentas.ic" NAME="java in ServicioCuentas Coverage Results" MODIFIED="1758305592671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$TipoNotificacionControllerTest.ic" NAME="TipoNotificacionControllerTest Coverage Results" MODIFIED="1758240914460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_getClienteResponse_success.ic" NAME="ClienteServiceTest.getClienteResponse_success Coverage Results" MODIFIED="1758238160670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoPrestamoServiceImplTest_getEstadoPrestamoEntityById.ic" NAME="EstadoPrestamoServiceImplTest.getEstadoPrestamoEntityById Coverage Results" MODIFIED="1758296928129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_registerKeyCloakId_shouldRegisterSuccessfully.ic" NAME="ClienteServiceTest.registerKeyCloakId_shouldRegisterSuccessfully Coverage Results" MODIFIED="1758239310318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$CuotaControllerTest.ic" NAME="CuotaControllerTest Coverage Results" MODIFIED="1758292497159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$All_in_ServicioTransacciones.ic" NAME="All in ServicioTransacciones Coverage Results" MODIFIED="1758248490456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoCuotaServiceTest.ic" NAME="EstadoCuotaServiceTest Coverage Results" MODIFIED="1758297740624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$CuotaServiceTest_getCuotasByPrestamoId.ic" NAME="CuotaServiceTest.getCuotasByPrestamoId Coverage Results" MODIFIED="1758300028356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$java_in_ServicioTransacciones.ic" NAME="java in ServicioTransacciones Coverage Results" MODIFIED="1758304605324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoNotificacionControllerTest.ic" NAME="EstadoNotificacionControllerTest Coverage Results" MODIFIED="1758240670191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicionotificaciones.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$EstadoClienteServiceTest.ic" NAME="EstadoClienteServiceTest Coverage Results" MODIFIED="1758230807691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_obtenerClienteConCuentas_success.ic" NAME="ClienteServiceTest.obtenerClienteConCuentas_success Coverage Results" MODIFIED="1758237772791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$ClienteServiceTest_obtenerClienteConCuentas_fallFeignException.ic" NAME="ClienteServiceTest.obtenerClienteConCuentas_fallFeignException Coverage Results" MODIFIED="1758238029620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioclientes.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Proyecto_NTT_DATA$NotificacionProducerTest.ic" NAME="NotificacionProducerTest Coverage Results" MODIFIED="1758303703315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>org.nttdata.com.servicioprestamos.producer.*</FILTER>
-    </SUITE>
   </component>
 </project>

@@ -39,6 +39,9 @@ public class TransaccionServiceImpl implements TransaccionService {
 
     @Override
     public TransaccionResponse createTransaccion(TransaccionRequest transaccionRequest) {
+
+        cuentaClient.getCuentaById(transaccionRequest.cuentaId()); // Verifica que la cuenta exista
+
         return transaccionMapper.toDto(transaccionRepository.save(
                 transaccionMapper.toEntity(transaccionRequest)
         ));
@@ -49,6 +52,9 @@ public class TransaccionServiceImpl implements TransaccionService {
         Transaccion transaccionFound = transaccionRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFound("Transaccion no encontrada con id: " + id)
         );
+
+        cuentaClient.getCuentaById(transaccionRequest.cuentaId()); // Verifica que la cuenta exista
+
         transaccionFound.setCuentaId(transaccionRequest.cuentaId());
         transaccionFound.setTipoTransaccion(transaccionMapper.toEntity(transaccionRequest).getTipoTransaccion());
         transaccionFound.setMonto(transaccionRequest.monto());
