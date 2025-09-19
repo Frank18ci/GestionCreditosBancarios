@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/CuentaControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/EstadoCuentaControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/TipoCuentaControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImpleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/EstadoCuentaServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/TipoCuentaServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/controller/TipoTransaccionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/controller/TransaccionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TipoTransaccionServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TransaccionServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/test/java/org/nttdata/com/servicionotificaciones/controller/EstadoNotificacionController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +18,8 @@
       <list>
         <option value="Record" />
         <option value="Interface" />
-        <option value="Exception" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -67,29 +56,26 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.ClienteServiceImplTest.executor": "Debug",
+    "JUnit.ClienteServiceImplTest.executor": "Run",
     "Maven.ServicioClientes [package].executor": "Run",
     "Maven.ServicioCuentas [package].executor": "Run",
     "Maven.ServicioNotificaciones [package].executor": "Run",
-    "Maven.ServicioTransacciones [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.ConfigServerApplication.executor": "Debug",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.ServicioClientesApplication.executor": "Run",
     "Spring Boot.ServicioCuentasApplication.executor": "Run",
-    "Spring Boot.ServicioEurekaApplication.executor": "Debug",
+    "Spring Boot.ServicioEurekaApplication.executor": "Run",
     "Spring Boot.ServicioNotificacionesApplication.executor": "Run",
     "Spring Boot.ServicioPrestamosApplication.executor": "Run",
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "test",
-    "junie.onboarding.icon.badge.shown": "true",
+    "git-widget-placeholder": "feature/tests",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto",
     "node.js.detected.package.eslint": "true",
@@ -102,7 +88,6 @@
     "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -134,26 +119,8 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
-    <option name="configurationStatuses">
-      <map>
-        <entry key="SpringBootApplicationConfigurationType">
-          <value>
-            <map>
-              <entry key="ApiGatewayApplication" value="STOPPED" />
-              <entry key="ConfigServerApplication" value="STOPPED" />
-              <entry key="ServicioClientesApplication" value="STOPPED" />
-              <entry key="ServicioCuentasApplication" value="STOPPED" />
-              <entry key="ServicioEurekaApplication" value="STOPPED" />
-              <entry key="ServicioNotificacionesApplication" value="FAILED" />
-              <entry key="ServicioPrestamosApplication" value="STOPPED" />
-              <entry key="ServicioTransaccionesApplication" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
-  <component name="RunManager" selected="JUnit.TipoCuentaServiceImplTest">
+  <component name="RunManager" selected="JUnit.ClienteServiceImplTest">
     <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServicioClientes" />
       <extension name="coverage">
@@ -164,21 +131,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.nttdata.com.servicioclientes.service.impl" />
       <option name="MAIN_CLASS_NAME" value="org.nttdata.com.servicioclientes.service.impl.ClienteServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TipoCuentaServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ServicioCuentas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.service" />
-      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.service.TipoCuentaServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -264,7 +216,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TipoCuentaServiceImplTest" />
       <item itemvalue="JUnit.ClienteServiceImplTest" />
       <item itemvalue="Spring Boot.ServicioNotificacionesApplication" />
       <item itemvalue="Spring Boot.ServicioClientesApplication" />
@@ -277,7 +228,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TipoCuentaServiceImplTest" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.ConfigServerApplication" />
         <item itemvalue="JUnit.ClienteServiceImplTest" />
@@ -287,8 +237,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
       </set>
     </attachedChunks>
   </component>
@@ -310,7 +260,6 @@
       <workItem from="1758127874949" duration="1595000" />
       <workItem from="1758130511811" duration="24130000" />
       <workItem from="1758199693543" duration="11279000" />
-      <workItem from="1758238366676" duration="7573000" />
     </task>
     <servers />
   </component>
