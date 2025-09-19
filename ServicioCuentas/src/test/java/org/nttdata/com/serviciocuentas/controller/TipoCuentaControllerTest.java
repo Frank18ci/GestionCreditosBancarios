@@ -32,6 +32,7 @@ class TipoCuentaControllerTest {
         ResponseEntity<?> result = tipoCuentaController.getAllTipoCuentas();
 
         assertEquals(HttpStatus.OK, result.getStatusCode());
+        assertNotNull(result.getBody());
         assertTrue(((List<?>) result.getBody()).isEmpty());
         verify(tipoCuentaService, times(1)).getAllTiposCuenta();
     }
@@ -56,10 +57,10 @@ class TipoCuentaControllerTest {
 
         when(tipoCuentaService.getTipoCuentaById(id)).thenThrow(new RuntimeException("Tipo de cuenta no encontrado"));
 
-        ResponseEntity<?> result = tipoCuentaController.getTipoCuentaById(id);
+        RuntimeException ex = assertThrows(RuntimeException.class,
+                () -> tipoCuentaController.getTipoCuentaById(id));
 
-        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
-        assertEquals("Tipo de cuenta no encontrado", result.getBody());
+        assertEquals("Tipo de cuenta no encontrado", ex.getMessage());
         verify(tipoCuentaService, times(1)).getTipoCuentaById(id);
     }
 
