@@ -1,4 +1,4 @@
-package org.nttdata.com.servicioprestamos.service.impl;
+package org.nttdata.com.servicioprestamos.service;
 
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.dto.EstadoCuotaRequest;
@@ -6,7 +6,6 @@ import org.nttdata.com.servicioprestamos.dto.EstadoCuotaResponse;
 import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.EstadoCuota;
 import org.nttdata.com.servicioprestamos.repository.EstadoCuotaRepository;
-import org.nttdata.com.servicioprestamos.service.EstadoCuotaService;
 import org.nttdata.com.servicioprestamos.util.EstadoCuotaMapper;
 import org.springframework.stereotype.Service;
 
