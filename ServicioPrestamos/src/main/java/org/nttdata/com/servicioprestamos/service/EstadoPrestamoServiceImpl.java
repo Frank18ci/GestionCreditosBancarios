@@ -1,4 +1,4 @@
-package org.nttdata.com.servicioprestamos.service.impl;
+package org.nttdata.com.servicioprestamos.service;
 
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.dto.EstadoPrestamoRequest;

@@ -1,4 +1,4 @@
-package org.nttdata.com.servicioprestamos.service.impl;
+package org.nttdata.com.servicioprestamos.service;
 
 import lombok.RequiredArgsConstructor;
 import org.nttdata.com.servicioprestamos.client.CuentaClient;
@@ -12,7 +12,6 @@ import org.nttdata.com.servicioprestamos.exception.ResourceNotFound;
 import org.nttdata.com.servicioprestamos.models.Cuota;
 import org.nttdata.com.servicioprestamos.models.EstadoCuota;
 import org.nttdata.com.servicioprestamos.repository.CuotaRepository;
-import org.nttdata.com.servicioprestamos.service.CuotaService;
 import org.nttdata.com.servicioprestamos.util.CuotaMapper;
 import org.springframework.stereotype.Service;
 
@@ -81,7 +80,7 @@ public class CuotaServiceImpl implements CuotaService {
         try {
             transaccionClient.crearTransaccion(transaccion);
         } catch (Exception ex) {
-            throw new IllegalStateException("Error al registrar transacción en cuenta: " + ex.getMessage(), ex);
+            throw new IllegalStateException("Error al registrar transacción en cuenta", ex);
         }
 
         // Restar monto de la cuenta
