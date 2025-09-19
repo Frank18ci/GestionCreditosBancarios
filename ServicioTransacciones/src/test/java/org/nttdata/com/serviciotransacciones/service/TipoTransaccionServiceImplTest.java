@@ -1,4 +1,4 @@
-package org.nttdata.com.serviciotransacciones.service.impl;
+package org.nttdata.com.serviciotransacciones.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,6 +6,7 @@ import org.nttdata.com.serviciotransacciones.dto.TipoTransaccionRequest;
 import org.nttdata.com.serviciotransacciones.dto.TipoTransaccionResponse;
 import org.nttdata.com.serviciotransacciones.model.TipoTransaccion;
 import org.nttdata.com.serviciotransacciones.repository.TipoTransaccionRepository;
+import org.nttdata.com.serviciotransacciones.service.impl.TipoTransaccionServiceImpl;
 import org.nttdata.com.serviciotransacciones.util.TipoTransaccionMapper;
 
 import java.lang.module.ResolutionException;

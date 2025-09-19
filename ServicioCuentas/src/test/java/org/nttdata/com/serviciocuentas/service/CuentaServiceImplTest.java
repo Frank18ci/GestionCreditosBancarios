@@ -1,7 +1,12 @@
 package org.nttdata.com.serviciocuentas.service;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.nttdata.com.serviciocuentas.client.ClienteClient;
 import org.nttdata.com.serviciocuentas.dto.CuentaRequest;
 import org.nttdata.com.serviciocuentas.dto.CuentaResponse;
 import org.nttdata.com.serviciocuentas.dto.EstadoCuentaResponse;
@@ -17,21 +22,19 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
+@ExtendWith(MockitoExtension.class)
 class CuentaServiceImplTest {
-
+    @Mock
     private CuentaRepository cuentaRepository;
+    @Mock
     private CuentaMapper cuentaMapper;
+    @Mock
     private EstadoCuentaService estadoCuentaService;
+    @Mock
+    private ClienteClient clienteClient;
+    @InjectMocks
     private CuentaServiceImpl cuentaService;
 
-    @BeforeEach
-    void setUp() {
-        cuentaRepository = mock(CuentaRepository.class);
-        cuentaMapper = mock(CuentaMapper.class);
-        estadoCuentaService = mock(EstadoCuentaService.class);
-        cuentaService = new CuentaServiceImpl(cuentaRepository, cuentaMapper, estadoCuentaService);
-    }
 
     @Test
     void crearCuenta_WhenRequestIsValid_ShouldReturnCuentaResponse() {
@@ -51,6 +54,51 @@ class CuentaServiceImplTest {
         verify(cuentaMapper, times(1)).toEntity(request);
         verify(cuentaRepository, times(1)).save(cuenta);
         verify(cuentaMapper, times(1)).toDto(cuenta);
+    }
+    @Test
+    @DisplayName("Crear cuenta debería fallar cuando el cliente no existe")
+    void crearCuenta_deberiaFallarCuandoClienteNoExiste() {
+        Long clienteId = 99L;
+        CuentaRequest request = new CuentaRequest(
+                clienteId,
+                1L,
+                1L,
+                BigDecimal.valueOf(500)
+        );
+
+        doThrow(new RuntimeException("Cliente no encontrado"))
+                .when(clienteClient).getClienteById(clienteId);
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () ->
+                cuentaService.crearCuenta(request)
+        );
+
+        assertEquals("Cliente no encontrado", ex.getMessage());
+        verify(cuentaRepository, never()).save(any());
+    }
+    @Test
+    @DisplayName("Actualizar cuenta debería fallar cuando el cliente no existe")
+    void actualizarCuenta_deberiaFallarCuandoClienteNoExiste() {
+        Long cuentaId = 1L;
+        Long clienteId = 99L;
+
+        CuentaRequest request = new CuentaRequest(
+                clienteId,
+                1L,
+                1L,
+                BigDecimal.valueOf(1000)
+        );
+        doThrow(new RuntimeException("Cliente no encontrado"))
+                .when(clienteClient).getClienteById(clienteId);
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () ->
+                cuentaService.actualizarCuenta(cuentaId, request)
+        );
+
+        assertEquals("Cliente no encontrado", ex.getMessage());
+
+        verify(cuentaRepository, never()).findById(anyLong());
+        verify(cuentaRepository, never()).save(any());
     }
 
     @Test

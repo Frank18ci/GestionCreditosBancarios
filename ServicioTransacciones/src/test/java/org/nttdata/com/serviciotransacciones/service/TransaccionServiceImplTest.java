@@ -1,6 +1,7 @@
-package org.nttdata.com.serviciotransacciones.service.impl;
+package org.nttdata.com.serviciotransacciones.service;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.nttdata.com.serviciotransacciones.client.CuentaClient;
 import org.nttdata.com.serviciotransacciones.client.dto.CuentaResponse;
@@ -12,6 +13,7 @@ import org.nttdata.com.serviciotransacciones.dto.TransaccionResponse;
 import org.nttdata.com.serviciotransacciones.exception.ResourceNotFound;
 import org.nttdata.com.serviciotransacciones.model.Transaccion;
 import org.nttdata.com.serviciotransacciones.repository.TransaccionRepository;
+import org.nttdata.com.serviciotransacciones.service.impl.TransaccionServiceImpl;
 import org.nttdata.com.serviciotransacciones.util.TransaccionMapper;
 
 import java.math.BigDecimal;
@@ -163,5 +165,55 @@ class TransaccionServiceImplTest {
         assertThrows(ResourceNotFound.class, () -> transaccionService.deleteTransaccion(id));
         verify(transaccionRepository, times(1)).findById(id);
         verify(transaccionRepository, times(0)).delete(any());
+    }
+    @Test
+    @DisplayName("createTransaccion debería fallar cuando la cuenta no existe")
+    void createTransaccion_deberiaFallarCuandoCuentaNoExiste() {
+        Long cuentaId = 99L;
+        TransaccionRequest request = TransaccionRequest.builder()
+                .cuentaId(cuentaId)
+                .monto(BigDecimal.valueOf(100))
+                .tipoTransaccionId(1L)
+                .referencia("Test")
+                .fecha(new Date())
+                .build();
+
+        doThrow(new RuntimeException("Cuenta no encontrada"))
+                .when(cuentaClient).getCuentaById(cuentaId);
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () ->
+                transaccionService.createTransaccion(request)
+        );
+
+        assertEquals("Cuenta no encontrada", ex.getMessage());
+        verify(transaccionRepository, never()).save(any());
+    }
+    @Test
+    @DisplayName("updateTransaccion debería fallar cuando la cuenta no existe")
+    void updateTransaccion_deberiaFallarCuandoCuentaNoExiste() {
+        Long transaccionId = 1L;
+        Long cuentaId = 99L;
+
+        TransaccionRequest request = TransaccionRequest.builder()
+                .cuentaId(cuentaId)
+                .monto(BigDecimal.valueOf(100))
+                .tipoTransaccionId(1L)
+                .referencia("Test")
+                .fecha(new Date())
+                .build();
+
+        Transaccion existente = new Transaccion();
+        existente.setId(transaccionId);
+
+        when(transaccionRepository.findById(transaccionId)).thenReturn(Optional.of(existente));
+        doThrow(new RuntimeException("Cuenta no encontrada"))
+                .when(cuentaClient).getCuentaById(cuentaId);
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () ->
+                transaccionService.updateTransaccion(transaccionId, request)
+        );
+
+        assertEquals("Cuenta no encontrada", ex.getMessage());
+        verify(transaccionRepository, never()).save(any());
     }
 }

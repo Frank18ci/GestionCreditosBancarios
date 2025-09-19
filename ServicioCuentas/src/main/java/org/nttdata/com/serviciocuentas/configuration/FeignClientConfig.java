@@ -1,7 +1,6 @@
 package org.nttdata.com.serviciocuentas.configuration;
 
 import feign.RequestInterceptor;
-import feign.RequestTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
@@ -9,14 +8,11 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 public class FeignClientConfig {
     @Bean
     public RequestInterceptor requestInterceptor(){
-        return new RequestInterceptor() {
-            @Override
-            public void apply(RequestTemplate requestTemplate) {
-                var auth = SecurityContextHolder.getContext().getAuthentication();
-                if(auth instanceof JwtAuthenticationToken jwtAuth){
-                    String token = jwtAuth.getToken().getTokenValue();
-                    requestTemplate.header("Authorization", "Bearer " + token);
-                }
+        return requestTemplate -> {
+            var auth = SecurityContextHolder.getContext().getAuthentication();
+            if(auth instanceof JwtAuthenticationToken jwtAuth){
+                String token = jwtAuth.getToken().getTokenValue();
+                requestTemplate.header("Authorization", "Bearer " + token);
             }
         };
     }
