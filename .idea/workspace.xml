@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ec9696-3f45-4fe1-b34c-dcdabe674658" name="Changes" comment="Agregando configuración de Swagger y permitiendo acceso a la documentación de la API">
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/CuentaControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/EstadoCuentaControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/controller/TipoCuentaControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImpleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/EstadoCuentaServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/TipoCuentaServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/controller/TipoTransaccionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/controller/TransaccionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TipoTransaccionServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TransaccionServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioNotificaciones/src/test/java/org/nttdata/com/servicionotificaciones/controller/EstadoNotificacionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/controller/EstadoCuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/controller/EstadoCuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImpleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +59,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.ClienteServiceImplTest.executor": "Debug",
+    "JUnit.CuentaServiceImplTest.executor": "Run",
+    "JUnit.EstadoCuentaControllerTest.executor": "Run",
+    "JUnit.ServicioCuentasApplicationTests.executor": "Run",
+    "JUnit.TipoCuentaServiceImplTest.executor": "Run",
+    "JUnit.TipoTransaccionControllerTest.executor": "Run",
+    "JUnit.TransaccionControllerTest.executor": "Run",
     "Maven.ServicioClientes [package].executor": "Run",
     "Maven.ServicioCuentas [package].executor": "Run",
     "Maven.ServicioNotificaciones [package].executor": "Run",
@@ -80,18 +77,19 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.ConfigServerApplication.executor": "Debug",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.ServicioClientesApplication.executor": "Run",
     "Spring Boot.ServicioCuentasApplication.executor": "Run",
-    "Spring Boot.ServicioEurekaApplication.executor": "Debug",
+    "Spring Boot.ServicioEurekaApplication.executor": "Run",
     "Spring Boot.ServicioNotificacionesApplication.executor": "Run",
     "Spring Boot.ServicioPrestamosApplication.executor": "Run",
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "test",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/client/dto",
+    "last_opened_file_path": "E:/curso de java NTTDATA/proyectos/APPbanco/GestionCreditosBancariosAPP/GestionCreditosBancarios",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +100,7 @@
     "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.2324159",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -139,8 +138,6 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
-              <entry key="ApiGatewayApplication" value="STOPPED" />
-              <entry key="ConfigServerApplication" value="STOPPED" />
               <entry key="ServicioClientesApplication" value="STOPPED" />
               <entry key="ServicioCuentasApplication" value="STOPPED" />
               <entry key="ServicioEurekaApplication" value="STOPPED" />
@@ -154,16 +151,31 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.TipoCuentaServiceImplTest">
-    <configuration name="ClienteServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ServicioClientes" />
+    <configuration name="CuentaServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioCuentas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nttdata.com.servicioclientes.service.impl.*" />
+          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nttdata.com.servicioclientes.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.servicioclientes.service.impl.ClienteServiceImplTest" />
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.service" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.service.CuentaServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EstadoCuentaControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioCuentas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nttdata.com.serviciocuentas.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciocuentas.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciocuentas.controller.EstadoCuentaControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,28 +196,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="api-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.apigateway.ApiGatewayApplication" />
+    <configuration name="TipoTransaccionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioTransacciones" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nttdata.com.apigateway.*" />
+          <option name="PATTERN" value="org.nttdata.com.serviciotransacciones.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciotransacciones.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciotransacciones.controller.TipoTransaccionControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="configServer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.nttdata.com.configserver.ConfigServerApplication" />
+    <configuration name="TransaccionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServicioTransacciones" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nttdata.com.configserver.*" />
+          <option name="PATTERN" value="org.nttdata.com.serviciotransacciones.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.nttdata.com.serviciotransacciones.controller" />
+      <option name="MAIN_CLASS_NAME" value="org.nttdata.com.serviciotransacciones.controller.TransaccionControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -264,23 +280,25 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CuentaServiceImplTest" />
+      <item itemvalue="JUnit.EstadoCuentaControllerTest" />
+      <item itemvalue="JUnit.TipoTransaccionControllerTest" />
+      <item itemvalue="JUnit.TransaccionControllerTest" />
       <item itemvalue="JUnit.TipoCuentaServiceImplTest" />
-      <item itemvalue="JUnit.ClienteServiceImplTest" />
       <item itemvalue="Spring Boot.ServicioNotificacionesApplication" />
       <item itemvalue="Spring Boot.ServicioClientesApplication" />
       <item itemvalue="Spring Boot.ServicioCuentasApplication" />
       <item itemvalue="Spring Boot.ServicioEurekaApplication" />
       <item itemvalue="Spring Boot.ServicioPrestamosApplication" />
       <item itemvalue="Spring Boot.ServicioTransaccionesApplication" />
-      <item itemvalue="Spring Boot.ApiGatewayApplication" />
-      <item itemvalue="Spring Boot.ConfigServerApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TipoCuentaServiceImplTest" />
-        <item itemvalue="Spring Boot.ApiGatewayApplication" />
-        <item itemvalue="Spring Boot.ConfigServerApplication" />
-        <item itemvalue="JUnit.ClienteServiceImplTest" />
+        <item itemvalue="JUnit.CuentaServiceImplTest" />
+        <item itemvalue="JUnit.EstadoCuentaControllerTest" />
+        <item itemvalue="JUnit.TransaccionControllerTest" />
+        <item itemvalue="JUnit.TipoTransaccionControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +328,8 @@
       <workItem from="1758127874949" duration="1595000" />
       <workItem from="1758130511811" duration="24130000" />
       <workItem from="1758199693543" duration="11279000" />
-      <workItem from="1758238366676" duration="7573000" />
+      <workItem from="1758238366676" duration="11632000" />
+      <workItem from="1758251438338" duration="3273000" />
     </task>
     <servers />
   </component>
