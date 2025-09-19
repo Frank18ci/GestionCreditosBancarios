@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b31482ab-af5d-4a69-bea0-04e2b1019491" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/ClienteClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/dto/ClienteResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/dto/EstadoClienteResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioClientes/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioCuentas/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioEureka/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioNotificaciones/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioPrestamos/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServicioTransacciones/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configServer/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stack/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/ServicioCuentasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/ServicioCuentasApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/FeignClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/configuration/FeignClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/service/impl/CuentaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioCuentas/src/test/java/org/nttdata/com/serviciocuentas/service/CuentaServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TransaccionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/main/java/org/nttdata/com/serviciotransacciones/service/impl/TransaccionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TransaccionServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServicioTransacciones/src/test/java/org/nttdata/com/serviciotransacciones/service/TransaccionServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -42,6 +41,9 @@
   "associatedIndex": 7
 }]]></component>
   <component name="ProjectId" id="32vi8AhJjWhSwpGevn80pab4iuk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,12 +54,22 @@
     "JUnit.CuentaServiceImplTest.crearCuenta_deberiaFallarCuandoClienteNoExiste.executor": "Run",
     "JUnit.CuentaServiceImplTest.executor": "Run",
     "JUnit.TransaccionServiceImplTest.createTransaccion_deberiaFallarCuandoCuentaNoExiste.executor": "Run",
+    "JUnit.TransaccionServiceImplTest.updateTransaccion_deberiaFallarCuandoCuentaNoExiste.executor": "Run",
+    "Maven.ServicioClientes [package].executor": "Run",
+    "Maven.ServicioCuentas [package].executor": "Run",
+    "Maven.ServicioEureka [package].executor": "Run",
+    "Maven.ServicioNotificaciones [package].executor": "Run",
+    "Maven.ServicioPrestamos [package].executor": "Run",
+    "Maven.ServicioTransacciones [package].executor": "Run",
+    "Maven.api-gateway [package].executor": "Run",
+    "Maven.configServer [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
@@ -69,19 +81,27 @@
     "Spring Boot.ServicioTransaccionesApplication.executor": "Run",
     "git-widget-placeholder": "feature/tests",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/ServicioCuentas/src/main/java/org/nttdata/com/serviciocuentas/client/dto",
+    "last_opened_file_path": "C:/Users/fcarp/Desktop/Proyecto de NTT DATA/Proyecto NTT DATA/stack",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioCuentas\src\main\java\org\nttdata\com\serviciocuentas\client\dto" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\stack" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioTransacciones" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioPrestamos" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioNotificaciones" />
+      <recent name="C:\Users\fcarp\Desktop\Proyecto de NTT DATA\Proyecto NTT DATA\ServicioEureka" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.nttdata.com.serviciocuentas.client.dto" />
@@ -102,7 +122,12 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="ApiGatewayApplication" value="STOPPED" />
+              <entry key="ConfigServerApplication" value="STOPPED" />
+              <entry key="ServicioClientesApplication" value="STOPPED" />
               <entry key="ServicioCuentasApplication" value="STOPPED" />
+              <entry key="ServicioEurekaApplication" value="STOPPED" />
+              <entry key="ServicioNotificacionesApplication" value="STOPPED" />
               <entry key="ServicioPrestamosApplication" value="STOPPED" />
               <entry key="ServicioTransaccionesApplication" value="STOPPED" />
             </map>
@@ -279,7 +304,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758307284514</updated>
-      <workItem from="1758307286246" duration="4613000" />
+      <workItem from="1758307286246" duration="8493000" />
     </task>
     <servers />
   </component>
