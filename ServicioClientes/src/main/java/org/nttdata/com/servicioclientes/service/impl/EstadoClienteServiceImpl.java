@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class EstadoClienteImpl implements EstadoClienteService {
+public class EstadoClienteServiceImpl implements EstadoClienteService {
     private final EstadoClienteRepository estadoClienteRepository;
     private final EstadoClienteMapper estadoClienteMapper;
 

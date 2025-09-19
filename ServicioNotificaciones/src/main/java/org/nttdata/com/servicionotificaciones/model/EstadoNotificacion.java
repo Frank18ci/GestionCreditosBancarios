@@ -2,6 +2,7 @@ package org.nttdata.com.servicionotificaciones.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "estado_notificaciones")
+@Builder
 public class EstadoNotificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
