@@ -13,14 +13,12 @@ import org.nttdata.com.serviciocuentas.util.CuentaMapper;
 import org.nttdata.com.serviciocuentas.service.impl.CuentaServiceImpl;
 
 import java.math.BigDecimal;
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class CuentaServiceImpleTest {
+class CuentaServiceImplTest {
 
     private CuentaRepository cuentaRepository;
     private CuentaMapper cuentaMapper;
